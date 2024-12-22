@@ -1,7 +1,4 @@
-/*
- * React: desenvolvendo com JavaScript | Programa Oracle ONE
- * Dev: Lucas Elias Dickmann
- */
+/* Component Banner */
 
 import "./Banner.css";
 

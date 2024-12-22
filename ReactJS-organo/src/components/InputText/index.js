@@ -1,4 +1,4 @@
-/* Componente de input de texto */
+/* Component de input de texto */
 
 import "./InputText.css";
 
