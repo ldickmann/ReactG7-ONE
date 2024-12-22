@@ -1,11 +1,8 @@
-/*
- * Componente de input de texto
- */
+/* Componente de input de texto */
 
 import "./InputText.css";
 
 const InputText = (props) => {
-
   // Interpolação de string
   const placeholderModificada = `${props.placeholder}...`;
 
