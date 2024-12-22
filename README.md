@@ -1,14 +1,14 @@
 # Fase 4 do Programa Oracle ONE - Especialização React
 
-### Formações
-
-#### Formação
-
-- **Módulo - React: desenvolvendo com JavaScript**
+## Formações
 
 ### React G7 | ONE
 
-#### Módulos Concluídos:
+#### Módulos em andamento:
+
+- Módulo: **React: desenvolvendo com JavaScript**
+
+#### Módulos concluídos:
 
 ## Diretórios
 
