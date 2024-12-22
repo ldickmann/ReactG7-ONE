@@ -26,9 +26,13 @@ const Forms = () => {
       <form onSubmit={aoSalvar}>
         <h2>Preencha os dados para criar o card do colaborador.</h2>
         <InputText required={true} label="Nome" placeholder="Digite seu nome" />
-        <InputText label="Cargo" placeholder="Digite seu cargo" />
+        <InputText
+          required={true}
+          label="Cargo"
+          placeholder="Digite seu cargo"
+        />
         <InputText label="Imagem" placeholder="Digite a URL da imagem" />
-        <DropdownList label="Time" items={times} />
+        <DropdownList required={true} label="Time" items={times} />
         <Button text="Criar card" />
       </form>
     </section>
