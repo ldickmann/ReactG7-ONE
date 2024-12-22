@@ -1,8 +1,9 @@
 /* Component Forms */
 
+import "./Forms.css";
 import InputText from "../InputText";
 import DropdownList from "../DropdownList";
-import "./Forms.css";
+import Button from "../Button";
 
 const Forms = () => {
   const times = [
@@ -23,6 +24,7 @@ const Forms = () => {
         <InputText label="Cargo" placeholder="Digite seu cargo" />
         <InputText label="Imagem" placeholder="Digite a URL da imagem" />
         <DropdownList label="Time" items={times} />
+        <Button text="Criar card" />
       </form>
     </section>
   );
