@@ -9,7 +9,7 @@ const InputText = (props) => {
   return (
     <div className="input-text">
       <label>{props.label}</label>
-      <input placeholder={placeholderModificada} />
+      <input required={props.required} placeholder={placeholderModificada} />
     </div>
   );
 };

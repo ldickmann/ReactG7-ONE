@@ -1,13 +1,16 @@
 /* Styles InputText component */
 
 .input-text {
-  margin: 24px 0;
+  margin: 1.5rem 0;
+  font-size: 1.125rem;
 }
 
 .input-text label {
   display: block;
-  margin-bottom: 8px;
-  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  color: #212121;
 }
 
 .input-text input {
@@ -16,6 +19,6 @@
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
   border: none;
   font-size: 1rem;
-  padding: 24px;
+  padding: 1.5rem;
   box-sizing: border-box;
 }
