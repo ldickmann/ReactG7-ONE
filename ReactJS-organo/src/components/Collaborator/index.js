@@ -3,10 +3,10 @@
 // Importação do CSS
 import "./Collaborator.css";
 
-const Collaborator = ({ nome, imagem, cargo }) => {
+const Collaborator = ({ nome, imagem, cargo, corDeFundo }) => {
   return (
     <div className="collaborator">
-      <div className="header">
+      <div className="header" style={{ backgroundColor: corDeFundo }}>
         <img src={imagem} alt={nome} />
       </div>
       <div className="footer">

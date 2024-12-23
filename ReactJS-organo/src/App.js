@@ -54,7 +54,6 @@ function App() {
 
   // Adiciona um novo colaborador à lista existente de colaboradores
   const aoNovoColaboradorAdicionado = (colaborador) => {
-    console.log(colaborador);
     setColaboradores([...colaboradores, colaborador]);
   };
 
@@ -67,7 +66,6 @@ function App() {
           aoNovoColaboradorAdicionado(colaborador)
         }
       />
-
       {times.map((time) => (
         <Time
           key={time.nome}
@@ -87,9 +85,7 @@ function App() {
         ]}
         logo={"./images/logo.png"}
         alt={"Logo"}
-        text={
-          "© Desenvolvido por Lucas Elias Dickmann | Oracle ONE & Alura"
-        }
+        text={"© Desenvolvido por Lucas Elias Dickmann | Oracle ONE & Alura"}
       />
     </div>
   );
