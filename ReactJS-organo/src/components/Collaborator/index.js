@@ -11,7 +11,7 @@ const Collaborator = ({ nome, imagem, cargo }) => {
       </div>
       <div className="footer">
         <h4>{nome}</h4>
-        <h5>{cargo}</h5>
+        <h6>{cargo}</h6>
       </div>
     </div>
   );
