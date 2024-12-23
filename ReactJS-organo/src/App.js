@@ -48,8 +48,10 @@ function App() {
     },
   ];
 
+  // Variável de estado para gerenciar dados de colaboradores e sua função setter.
   const [colaboradores, setColaboradores] = useState([]);
 
+  // Adiciona um novo colaborador à lista existente de colaboradores
   const aoNovoColaboradorAdicionado = (colaborador) => {
     console.log(colaborador);
     setColaboradores([...colaboradores, colaborador]);
