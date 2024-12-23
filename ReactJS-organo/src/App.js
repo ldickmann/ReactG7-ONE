@@ -9,7 +9,7 @@ import Forms from "./components/Forms";
 import Time from "./components/Time";
 
 function App() {
-  // Array de objetos
+  // Array de objetos com os times e suas respectivas cores
   const times = [
     {
       nome: "Programação",
