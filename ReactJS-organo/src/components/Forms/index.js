@@ -1,12 +1,12 @@
 /* Component Forms */
 
+import { useState } from "react";
 import "./Forms.css";
 import InputText from "../InputText";
 import DropdownList from "../DropdownList";
 import Button from "../Button";
-import { useState } from "react";
 
-const Forms = () => {
+const Forms = (props) => {
   const times = [
     "Programação",
     "Front-End",
@@ -24,7 +24,12 @@ const Forms = () => {
 
   const aoSalvar = (event) => {
     event.preventDefault();
-    console.log("Form foi submetido =>", nome, cargo, imagem, time);
+    props.aoColaboradorCadastrado({
+      nome,
+      cargo,
+      imagem,
+      time,
+    });
   };
 
   return (
