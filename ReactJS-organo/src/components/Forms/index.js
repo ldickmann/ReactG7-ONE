@@ -14,7 +14,7 @@ const Forms = (props) => {
 
   const aoSalvar = (event) => {
     event.preventDefault();
-    props.aoColaboradorCadastrado({
+    props.aoDigimonCadastrado({
       nome,
       grade,
       imagem,
