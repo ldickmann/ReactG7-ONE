@@ -30,7 +30,7 @@ const Forms = (props) => {
   return (
     <section className="forms">
       <form onSubmit={aoSalvar}>
-        <h2>Preencha od dados do Digimon que quer adicionar</h2>
+        <h2>Preencha os dados do Digimon para adicionar</h2>
         <InputText
           required={true}
           label="Nome"

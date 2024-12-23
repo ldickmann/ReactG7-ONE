@@ -94,7 +94,7 @@ function App() {
         ]}
         logo={"./images/logo-organo.png"}
         alt={"Logo"}
-        text={"Oracle ONE & A"}
+        text={"Oracle ONE & Alura"}
         subTitle={"© Desenvolvido por Lucas Elias Dickmann"}
       />
     </div>
