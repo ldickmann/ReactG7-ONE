@@ -7,16 +7,6 @@ import DropdownList from "../DropdownList";
 import Button from "../Button";
 
 const Forms = (props) => {
-  const times = [
-    "Programação",
-    "Front-End",
-    "Data Science",
-    "DevOps",
-    "UX e Design",
-    "Mobile",
-    "Inovação e Gestão",
-  ];
-
   const [nome, setNome] = useState("");
   const [cargo, setCargo] = useState("");
   const [imagem, setImagem] = useState("");
@@ -59,7 +49,7 @@ const Forms = (props) => {
         <DropdownList
           required={true}
           label="Time"
-          items={times}
+          items={props.times}
           valor={time}
           aoAlterado={(valor) => setTime(valor)}
         />
