@@ -4,7 +4,7 @@
 import "./Time.css";
 
 // Importações de componentes
-import Collaborator from "../Collaborator";
+import Digimons from "../Digimons";
 
 const Time = (props) => {
   /* Outra alternativa para a estilização do componente */
@@ -14,7 +14,7 @@ const Time = (props) => {
 
   return (
     // Verifica se o componente possui colaboradores, se sim, renderiza o componente
-    props.colaboradores.length > 0 && (
+    props.digimons.length > 0 && (
       <section
         className="time"
         style={{ backgroundColor: props.corSecundaria }}
@@ -22,7 +22,7 @@ const Time = (props) => {
         <h3 style={{ borderColor: props.corPrimaria }}>{props.nome}</h3>
         <div className="colaboradores">
           {props.colaboradores.map((colaborador) => (
-            <Collaborator
+            <Digimons
               corDeFundo={props.corPrimaria}
               key={colaborador.nome}
               nome={colaborador.nome}

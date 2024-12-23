@@ -9,8 +9,8 @@ export const Banner = () => {
     // <>
     <header className="banner">
       <img
-        src="/images/banner.png"
-        alt="Banner principal da página do Organo"
+        src="/images/banner-digimon.jpg"
+        alt="Banner Digimon"
       />
     </header>
     /* Comentário da linha de teste sobre o fragment component do React */

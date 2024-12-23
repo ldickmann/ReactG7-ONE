@@ -13,49 +13,49 @@ function App() {
   // Array de objetos com os times e suas respectivas cores
   const times = [
     {
-      nome: "Programação",
+      nome: "Social",
       corPrimaria: "#57c278",
       corSecundaria: "#d9f7e9",
     },
     {
-      nome: "Front-end",
+      nome: "Navi",
       corPrimaria: "#82cffa",
       corSecundaria: "#e8f8ff",
     },
     {
-      nome: "Data Science",
+      nome: "Tool",
       corPrimaria: "#a6d157",
       corSecundaria: "#f0f8e2",
     },
     {
-      nome: "DevOps",
+      nome: "System",
       corPrimaria: "#e06b69",
       corSecundaria: "#fde7e8",
     },
     {
-      nome: "UX e Design",
+      nome: "Game",
       corPrimaria: "#db6ebf",
       corSecundaria: "#fae9f5",
     },
     {
-      nome: "Mobile",
+      nome: "Entame",
       corPrimaria: "#ffba05",
       corSecundaria: "#fff5d9",
     },
     {
-      nome: "Inovação e Gestão",
+      nome: "Life",
       corPrimaria: "#ff8a29",
       corSecundaria: "#ffeedf",
     },
   ];
 
   // Variável de estado para gerenciar dados de colaboradores e sua função setter.
-  const [colaboradores, setColaboradores] = useState([]);
+  const [digimons, setDigimons] = useState([]);
 
   // Adiciona um novo colaborador à lista existente de colaboradores
-  const aoNovoColaboradorAdicionado = (colaborador) => {
+  const aoNovoDigimonAdicionado = (digimon) => {
     // debugger;
-    setColaboradores([...colaboradores, colaborador]);
+    setDigimons([...digimons, digimon]);
   };
 
   return (
@@ -63,9 +63,7 @@ function App() {
       <Banner />
       <Forms
         times={times.map((time) => time.nome)}
-        aoColaboradorCadastrado={(colaborador) =>
-          aoNovoColaboradorAdicionado(colaborador)
-        }
+        aoDigimonCadastrado={(digimon) => aoNovoDigimonAdicionado(digimon)}
       />
       {times.map((time) => (
         <Time
@@ -73,20 +71,30 @@ function App() {
           nome={time.nome}
           corPrimaria={time.corPrimaria}
           corSecundaria={time.corSecundaria}
-          colaboradores={colaboradores.filter(
-            (colaborador) => colaborador.time === time.nome
-          )}
+          digimons={digimons.filter((digimon) => digimons.time === time.nome)}
         />
       ))}
       <Footer
         socials={[
-          { src: "./images/facebook.png", alt: "Facebook" },
-          { src: "./images/instagram.png", alt: "Instagram" },
-          { src: "./images/twitter.png", alt: "Twitter" },
+          {
+            name: "linkedin",
+            link: "https://www.linkedin.com/in/lucas-dickmann",
+            alt: "Facebook",
+          },
+          {
+            name: "github",
+            link: "https://github.com/ldickmann",
+            alt: "Github",
+          },
+          {
+            name: "instagram",
+            link: "https://www.instagram.com/luksdickmann",
+            alt: "Instagram",
+          },
         ]}
-        logo={"./images/logo.png"}
+        logo={"./images/logo-organo.png"}
         alt={"Logo"}
-        text={"Desenvolvido por Alura."}
+        text={"Oracle ONE & A"}
         subTitle={"© Desenvolvido por Lucas Elias Dickmann"}
       />
     </div>

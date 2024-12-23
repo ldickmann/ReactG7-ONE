@@ -1,11 +1,11 @@
-/* Component Collaborator */
+/* Component Digimons */
 
 // Importação do CSS
-import "./Collaborator.css";
+import "./Digimons.css";
 
-const Collaborator = ({ nome, imagem, cargo, corDeFundo }) => {
+const Digimons = ({ nome, imagem, cargo, corDeFundo }) => {
   return (
-    <div className="collaborator">
+    <div className="digimons">
       <div className="header" style={{ backgroundColor: corDeFundo }}>
         <img src={imagem} alt={nome} />
       </div>
@@ -17,4 +17,4 @@ const Collaborator = ({ nome, imagem, cargo, corDeFundo }) => {
   );
 };
 
-export default Collaborator;
+export default Digimons;

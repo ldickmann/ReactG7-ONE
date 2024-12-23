@@ -1,22 +1,22 @@
 /* Styles Collaborator component */
 
-.collaborator {
+.digimons {
   width: 280px;
 }
 
-.collaborator .header {
+.digimons .header {
   background-color: #f0f0f0;
   border-radius: 10px 10px 0px 0px;
 }
 
-.collaborator img {
+.digimons img {
   width: 6.25rem;
   border-radius: 50%;
   position: relative;
   bottom: -3.125rem;
 }
 
-.collaborator .footer {
+.digimons .footer {
   display: block;
   background: #ffffff;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
@@ -25,14 +25,14 @@
   padding-bottom: 2.5rem;
 }
 
-.collaborator .footer h4 {
+.digimons .footer h4 {
   color: #6278f7;
   font-size: 1.125rem;
   line-height: 1.375rem;
   margin-bottom: 0.5rem;
 }
 
-.collaborator .footer h6 {
+.digimons .footer h6 {
   color: #212121;
   padding: 0 16px;
 }

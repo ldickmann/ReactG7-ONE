@@ -8,7 +8,7 @@ import Button from "../Button";
 
 const Forms = (props) => {
   const [nome, setNome] = useState("");
-  const [cargo, setCargo] = useState("");
+  const [grade, setGrade] = useState("");
   const [imagem, setImagem] = useState("");
   const [time, setTime] = useState("");
 
@@ -16,13 +16,13 @@ const Forms = (props) => {
     event.preventDefault();
     props.aoColaboradorCadastrado({
       nome,
-      cargo,
+      grade,
       imagem,
       time,
     });
     // Limpa os campos do formulário
     setNome("");
-    setCargo("");
+    setGrade("");
     setImagem("");
     setTime("");
   };
@@ -30,20 +30,20 @@ const Forms = (props) => {
   return (
     <section className="forms">
       <form onSubmit={aoSalvar}>
-        <h2>Preencha os dados para criar o card do colaborador.</h2>
+        <h2>Preencha od dados do Digimon que quer adicionar</h2>
         <InputText
           required={true}
           label="Nome"
-          placeholder="Digite seu nome"
+          placeholder="Digite o nome do Digimon"
           valor={nome}
           aoAlterado={(valor) => setNome(valor)}
         />
         <InputText
           required={true}
-          label="Cargo"
-          placeholder="Digite seu cargo"
-          valor={cargo}
-          aoAlterado={(valor) => setCargo(valor)}
+          label="Grade"
+          placeholder="Digite a ordem de desenvolvimento"
+          valor={grade}
+          aoAlterado={(valor) => setGrade(valor)}
         />
         <InputText
           label="Imagem"
@@ -53,7 +53,7 @@ const Forms = (props) => {
         />
         <DropdownList
           required={true}
-          label="Time"
+          label="Tipo"
           items={props.times}
           valor={time}
           aoAlterado={(valor) => setTime(valor)}
