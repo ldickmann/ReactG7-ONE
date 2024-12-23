@@ -1,6 +1,5 @@
 /* Component de input de texto */
 
-import { useState } from "react";
 import "./InputText.css";
 
 const InputText = (props) => {
@@ -9,19 +8,16 @@ const InputText = (props) => {
 
   // let valor = "Lucas E. Dickmann";
 
-  const [valor, setValor] = useState("");
-
-  const aoDigitar = (event) => {
-    setValor(event.target.value);
-    console.log(valor);
+  const aoDigitado = (event) => {
+    props.aoAlterado(event.target.value);
   };
 
   return (
     <div className="input-text">
       <label>{props.label}</label>
       <input
-        value={valor}
-        onChange={aoDigitar}
+        value={props.valor}
+        onChange={aoDigitado}
         required={props.required}
         placeholder={placeholderModificada}
       />
