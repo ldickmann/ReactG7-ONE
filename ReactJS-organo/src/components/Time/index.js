@@ -13,21 +13,20 @@ const Time = (props) => {
   // };
 
   return (
-    // Verifica se o componente possui colaboradores, se sim, renderiza o componente
+    // Verifica se o componente possui digimons, se sim, renderiza o componente
     props.digimons.length > 0 && (
       <section
         className="time"
         style={{ backgroundColor: props.corSecundaria }}
       >
         <h3 style={{ borderColor: props.corPrimaria }}>{props.nome}</h3>
-        <div className="colaboradores">
-          {props.colaboradores.map((colaborador) => (
+        <div className="digimons">
+          {props.digimons.map((digimon) => (
             <Digimons
               corDeFundo={props.corPrimaria}
-              key={colaborador.nome}
-              nome={colaborador.nome}
-              cargo={colaborador.cargo}
-              imagem={colaborador.imagem}
+              key={digimons.nome}
+              cargo={digimons.cargo}
+              imagem={digimons.imagem}
             />
           ))}
         </div>
