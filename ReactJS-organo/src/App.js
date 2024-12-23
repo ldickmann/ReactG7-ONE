@@ -54,7 +54,7 @@ function App() {
 
   // Adiciona um novo colaborador à lista existente de colaboradores
   const aoNovoColaboradorAdicionado = (colaborador) => {
-    debugger;
+    // debugger;
     setColaboradores([...colaboradores, colaborador]);
   };
 
@@ -86,7 +86,8 @@ function App() {
         ]}
         logo={"./images/logo.png"}
         alt={"Logo"}
-        text={"© Desenvolvido por Lucas Elias Dickmann | Oracle ONE & Alura"}
+        text={"Desenvolvido por Alura."}
+        subTitle={"© Desenvolvido por Lucas Elias Dickmann"}
       />
     </div>
   );

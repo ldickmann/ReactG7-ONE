@@ -6,28 +6,52 @@
 /* Styles Footer component */
 
 .footer {
-  background-color: #6278f7;
-  padding: 79px 0;
-  text-align: center;
+  background-size: contain;
+  padding: 5rem 0.5rem 0 0.5rem;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
   align-items: center;
-  gap: 21rem;
 }
 
 .footer .container-social-media {
   display: flex;
-  width: 25px;
-  height: 25px;
-  gap: 20px;
+  width: 1.5rem;
+  height: 1.5rem;
+  gap: 0.625rem;
 }
 
 .footer p {
   color: #fff;
   text-align: right;
   font-family: "Montserrat", sans-serif;
-  font-size: 15px;
+  font-size: 0.938rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+}
+
+.footer .container-subtitle {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  margin-top: 3.75rem;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    gap: 1.875rem;
+    padding: 0.625rem;
+  }
+
+  .footer .container-social-media {
+    justify-content: center;
+    margin-top: 1.25rem;
+  }
+
+  .footer .container-subtitle {
+    margin-top: 1rem;
+  }
 }
