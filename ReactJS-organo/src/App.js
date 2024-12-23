@@ -54,6 +54,7 @@ function App() {
 
   // Adiciona um novo colaborador à lista existente de colaboradores
   const aoNovoColaboradorAdicionado = (colaborador) => {
+    debugger;
     setColaboradores([...colaboradores, colaborador]);
   };
 
