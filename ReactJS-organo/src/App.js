@@ -7,6 +7,7 @@ import { useState } from "react";
 import Banner from "./components/Banner";
 import Forms from "./components/Forms";
 import Time from "./components/Time";
+import Footer from "./components/Footer";
 
 function App() {
   // Array de objetos com os times e suas respectivas cores
@@ -78,6 +79,18 @@ function App() {
           )}
         />
       ))}
+      <Footer
+        socials={[
+          { src: "./images/facebook.png", alt: "Facebook" },
+          { src: "./images/instagram.png", alt: "Instagram" },
+          { src: "./images/twitter.png", alt: "Twitter" },
+        ]}
+        logo={"./images/logo.png"}
+        alt={"Logo"}
+        text={
+          "© Desenvolvido por Lucas Elias Dickmann | Oracle ONE & Alura"
+        }
+      />
     </div>
   );
 }
