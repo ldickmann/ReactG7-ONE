@@ -7,7 +7,6 @@ import "./Time.css";
 import Digimons from "../Digimons";
 
 const Time = (props) => {
-  console.log(props);
   /* Outra alternativa para a estilização do componente */
   // const css = {
   //   backgroundColor: props.corSecundaria,
