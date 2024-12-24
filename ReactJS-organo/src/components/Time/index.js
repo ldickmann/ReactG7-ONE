@@ -25,7 +25,7 @@ const Time = (props) => {
             <Digimons
               corDeFundo={props.corPrimaria}
               key={digimons.nome}
-              cargo={digimons.cargo}
+              grade={digimons.grade}
               imagem={digimons.imagem}
             />
           ))}

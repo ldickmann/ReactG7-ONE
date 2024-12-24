@@ -3,7 +3,7 @@
 // Importação do CSS
 import "./Digimons.css";
 
-const Digimons = ({ nome, imagem, cargo, corDeFundo }) => {
+const Digimons = ({ nome, imagem, grade, corDeFundo }) => {
   return (
     <div className="digimons">
       <div className="header" style={{ backgroundColor: corDeFundo }}>
@@ -11,7 +11,7 @@ const Digimons = ({ nome, imagem, cargo, corDeFundo }) => {
       </div>
       <div className="footer">
         <h4>{nome}</h4>
-        <h6>{cargo}</h6>
+        <h6>{grade}</h6>
       </div>
     </div>
   );

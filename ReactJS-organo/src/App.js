@@ -49,10 +49,10 @@ function App() {
     },
   ];
 
-  // Variável de estado para gerenciar dados de colaboradores e sua função setter.
+  // Variável de estado para gerenciar dados dos digimons e sua função setter.
   const [digimons, setDigimons] = useState([]);
 
-  // Adiciona um novo colaborador à lista existente de colaboradores
+  // Adiciona um novo digimon à lista existente de digimons
   const aoNovoDigimonAdicionado = (digimon) => {
     // debugger;
     setDigimons([...digimons, digimon]);
