@@ -10,7 +10,7 @@ const Forms = (props) => {
   const [nome, setNome] = useState("");
   const [grade, setGrade] = useState("");
   const [imagem, setImagem] = useState("");
-  const [time, setTime] = useState("");
+  const [stage, setStage] = useState("");
 
   const aoSalvar = (event) => {
     event.preventDefault();
@@ -18,13 +18,13 @@ const Forms = (props) => {
       nome,
       grade,
       imagem,
-      time,
+      stage,
     });
     // Limpa os campos do formulário
     setNome("");
     setGrade("");
     setImagem("");
-    setTime("");
+    setStage("");
   };
 
   return (
@@ -53,10 +53,10 @@ const Forms = (props) => {
         />
         <DropdownList
           required={true}
-          label="Tipo"
-          items={props.times}
-          valor={time}
-          aoAlterado={(valor) => setTime(valor)}
+          label="Estágios de Evolução"
+          items={props.stages}
+          valor={stage}
+          aoAlterado={(valor) => setStage(valor)}
         />
         <Button text="Criar card" />
       </form>

@@ -6,46 +6,61 @@
 import { useState } from "react";
 import Banner from "./components/Banner";
 import Forms from "./components/Forms";
-import Time from "./components/Time";
+import StageEvolution from "./components/StageEvolution";
 import Footer from "./components/Footer";
 
 function App() {
   // Array de objetos com os times e suas respectivas cores
-  const times = [
+  const stagesEvolution = [
     {
-      nome: "Social",
+      nome: "DagiTama",
       corPrimaria: "#57c278",
       corSecundaria: "#d9f7e9",
     },
     {
-      nome: "Navi",
+      nome: "Bebé I",
       corPrimaria: "#82cffa",
       corSecundaria: "#e8f8ff",
     },
     {
-      nome: "Tool",
+      nome: "Bebé II",
       corPrimaria: "#a6d157",
       corSecundaria: "#f0f8e2",
     },
     {
-      nome: "System",
+      nome: "Criança",
       corPrimaria: "#e06b69",
       corSecundaria: "#fde7e8",
     },
     {
-      nome: "Game",
+      nome: "Adulto",
       corPrimaria: "#db6ebf",
       corSecundaria: "#fae9f5",
     },
     {
-      nome: "Entame",
+      nome: "Perfeito",
       corPrimaria: "#ffba05",
       corSecundaria: "#fff5d9",
     },
     {
-      nome: "Life",
+      nome: "Final",
       corPrimaria: "#ff8a29",
       corSecundaria: "#ffeedf",
+    },
+    {
+      nome: "Super Final",
+      corPrimaria: "#ff3f3f",
+      corSecundaria: "#ffe6e6",
+    },
+    {
+      nome: "Armor",
+      corPrimaria: "#ff3f3f",
+      corSecundaria: "#ffe6e6",
+    },
+    {
+      nome: "Hybrid",
+      corPrimaria: "#ff3f3f",
+      corSecundaria: "#ffe6e6",
     },
   ];
 
@@ -62,16 +77,16 @@ function App() {
     <div className="App">
       <Banner />
       <Forms
-        times={times.map((time) => time.nome)}
+        stages={stagesEvolution.map((stage) => stage.nome)}
         aoDigimonCadastrado={(digimon) => aoNovoDigimonAdicionado(digimon)}
       />
-      {times.map((time) => (
-        <Time
-          key={time.nome}
-          nome={time.nome}
-          corPrimaria={time.corPrimaria}
-          corSecundaria={time.corSecundaria}
-          digimons={digimons.filter((digimons) => digimons.time === time.nome)}
+      {stagesEvolution.map((stage) => (
+        <StageEvolution
+          key={stage.nome}
+          nome={stage.nome}
+          corPrimaria={stage.corPrimaria}
+          corSecundaria={stage.corSecundaria}
+          digimons={digimons.filter((digimons) => digimons.stage === stage.nome)}
         />
       ))}
       <Footer

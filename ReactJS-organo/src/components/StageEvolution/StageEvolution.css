@@ -1,18 +1,18 @@
-/* Styles Time component */
+/* Styles StageEvolution component */
 
-.time {
+.stage-evolution {
   text-align: center;
   padding: 2rem;
 }
 
-.time h3 {
+.stage-evolution h3 {
   font-size: 2rem;
   border-bottom: 4px solid;
   display: inline-block;
   padding-bottom: 0.5rem;
 }
 
-.time .container-digimons {
+.stage-evolution .container-digimons {
   display: flex;
   justify-content: space-around;
   margin-top: 2rem;

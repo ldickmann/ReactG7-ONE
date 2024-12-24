@@ -1,12 +1,12 @@
 /* Component Time */
 
 // Importação do CSS
-import "./Time.css";
+import "./StageEvolution.css";
 
 // Importações de componentes
 import Digimons from "../Digimons";
 
-const Time = (props) => {
+const StageEvolution = (props) => {
   /* Outra alternativa para a estilização do componente */
   // const css = {
   //   backgroundColor: props.corSecundaria,
@@ -16,7 +16,7 @@ const Time = (props) => {
     // Verifica se o componente possui digimons, se sim, renderiza o componente
     props.digimons.length > 0 && (
       <section
-        className="time"
+        className="stage-evolution"
         style={{ backgroundColor: props.corSecundaria }}
       >
         <h3 style={{ borderColor: props.corPrimaria }}>{props.nome}</h3>
@@ -36,4 +36,4 @@ const Time = (props) => {
   );
 };
 
-export default Time;
+export default StageEvolution;
