@@ -54,7 +54,7 @@ function App() {
 
   // Adiciona um novo digimon à lista existente de digimons
   const aoNovoDigimonAdicionado = (digimon) => {
-    // debugger;
+    debugger;
     setDigimons([...digimons, digimon]);
   };
 
@@ -71,7 +71,7 @@ function App() {
           nome={time.nome}
           corPrimaria={time.corPrimaria}
           corSecundaria={time.corSecundaria}
-          digimons={digimons.filter((digimon) => digimons.time === time.nome)}
+          digimons={digimons.filter((digimons) => digimons.time === time.nome)}
         />
       ))}
       <Footer

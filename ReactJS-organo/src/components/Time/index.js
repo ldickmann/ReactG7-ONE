@@ -7,6 +7,7 @@ import "./Time.css";
 import Digimons from "../Digimons";
 
 const Time = (props) => {
+  console.log(props);
   /* Outra alternativa para a estilização do componente */
   // const css = {
   //   backgroundColor: props.corSecundaria,
@@ -20,13 +21,14 @@ const Time = (props) => {
         style={{ backgroundColor: props.corSecundaria }}
       >
         <h3 style={{ borderColor: props.corPrimaria }}>{props.nome}</h3>
-        <div className="digimons">
+        <div className="container-digimons">
           {props.digimons.map((digimon) => (
             <Digimons
               corDeFundo={props.corPrimaria}
-              key={digimons.nome}
-              grade={digimons.grade}
-              imagem={digimons.imagem}
+              key={digimon.nome}
+              nome={digimon.nome}
+              imagem={digimon.imagem}
+              grade={digimon.grade}
             />
           ))}
         </div>
