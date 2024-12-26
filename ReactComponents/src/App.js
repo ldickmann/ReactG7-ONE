@@ -260,10 +260,16 @@ function App() {
     );
   }
 
+  // Função para cadastrar um novo time
+  function cadastrarTime(novoTime) {
+    setTimes([...times, { ...novoTime, id: uuidv4() }]);
+  }
+
   return (
     <div>
       <Banner />
       <Formulario
+        cadastrarTime={cadastrarTime}
         times={times.map((time) => time.nome)}
         aoCadastrar={(colaborador) =>
           setColaboradores([...colaboradores, colaborador])
