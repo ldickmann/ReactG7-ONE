@@ -1,0 +1,49 @@
+#sidebar {
+  height: 100vh;
+  width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  background-color: black;
+  transition: opacity 0.5s, width 0.5s;
+  color: azure;
+  z-index: 999; /* Para garantir que fique acima da navbar */
+}
+
+/* Links na sidebar */
+#sidebar a {
+  text-decoration: none;
+  font-family: "Anton", sans-serif;
+  font-weight: 800;
+  font-size: 9vw;
+  margin: 0;
+  padding: 1vw;
+  width: 90%;
+  text-align: left;
+  -webkit-text-stroke-width: 0.15vw;
+  -webkit-text-stroke-color: white;
+  color: transparent;
+  border-radius: 5vw;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s, color 0.3s;
+}
+
+#sidebar a {
+  opacity: 1;
+}
+
+/* Botão de fechar a sidebar */
+#close-button {
+  cursor: pointer;
+  z-index: 1002;
+  margin-bottom: 2vw;
+}
+
+#close-button:hover {
+  color: #66fcf1;
+  border: 0.5vw solid #66fcf1;
+}

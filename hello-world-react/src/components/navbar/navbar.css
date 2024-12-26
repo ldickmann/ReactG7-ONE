@@ -1,0 +1,49 @@
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: transparent;
+  transition: top 0.3s, background-color 0.3s;
+  z-index: 1000;
+  opacity: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding: 1vw;
+  align-items: center;
+}
+
+/* Navbar com os links */
+#navbar ul {
+  display: flex;
+}
+
+#navbar ul li {
+  display: inline;
+}
+
+#navbar ul li a {
+  color: white;
+  padding: 14px 18px;
+  display: block;
+}
+
+#navbar ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Ícone de hambúrguer */
+#hamburger-icon {
+  cursor: pointer;
+  display: none; /* Escondido por padrão */
+  z-index: 1001; /* Para garantir que fique acima de outros elementos */
+}
+
+@media (max-width: 600px) {
+  #navbar ul {
+    display: none;
+  }
+
+  #hamburger-icon {
+    display: block; /* Exibir o ícone de hambúrguer */
+  }
+}
