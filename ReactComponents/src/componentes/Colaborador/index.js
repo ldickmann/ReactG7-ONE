@@ -4,8 +4,13 @@ import "./colaborador.css";
 const Colaborador = ({ colaborador, corDeFundo, aoDeletar }) => {
   return (
     <div className="colaborador">
-      {/* Container para o botão de deletar */}
-      <AiFillCloseCircle size={25} className="deletar" onClick={aoDeletar} />
+      {/* Icon do botão de deletar */}
+      <AiFillCloseCircle
+        size={25}
+        className="deletar"
+        // Evento de clique para deletar o colaborador
+        onClick={() => aoDeletar(colaborador.id)}
+      />
       <div className="cabecalho" style={{ backgroundColor: corDeFundo }}>
         <img src={colaborador.imagem} alt={colaborador.nome} />
       </div>

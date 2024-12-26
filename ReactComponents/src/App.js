@@ -241,8 +241,11 @@ function App() {
 
   const [colaboradores, setColaboradores] = useState(inicial);
 
-  function deletarColaborador() {
-    // console.log("Deletando Colaborador");
+  function deletarColaborador(id) {
+    // console.log("Deletando Colaborador: ", prop);
+    setColaboradores(
+      colaboradores.filter((colaborador) => colaborador.id !== id)
+    );
   }
 
   // Função para mudar a cor do time
