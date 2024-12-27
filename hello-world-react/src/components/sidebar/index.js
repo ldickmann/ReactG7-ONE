@@ -1,39 +1,35 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FaTimes } from "react-icons/fa";
-import "./toggleSidebar.css";
+import styles from "./toggleSidebar.module.css";
 
 const Sidebar = ({ toggleSidebar, isSidebarOpen }) => {
   return (
     <div
       id="sidebar"
+      className={`${styles.sidebar} ${isSidebarOpen ? styles.open : ""}`}
       style={{
         width: isSidebarOpen ? "100%" : "0",
         opacity: isSidebarOpen ? "1" : "0",
       }}
     >
-      <div className="sidebar-header">
-        <div className="close-icon" onClick={toggleSidebar}>
+      <div className={styles.sidebarHeader}>
+        <div className={styles.closeIcon} onClick={toggleSidebar}>
           <FaTimes size={40} color="white" />
         </div>
       </div>
-      <a href="#home" onClick={toggleSidebar}>
+      <Link to="/" className={styles.link} onClick={toggleSidebar}>
         Home
-      </a>
-      <a href="#about" onClick={toggleSidebar}>
-        Sobre
-      </a>
-      <a href="#hard-skills" onClick={toggleSidebar}>
-        Hard Skills
-      </a>
-      <a href="#soft-skills" onClick={toggleSidebar}>
-        Soft Skills
-      </a>
-      <a href="#projects" onClick={toggleSidebar}>
+      </Link>
+      <Link to="#about-me" className={styles.link} onClick={toggleSidebar}>
+        Skills
+      </Link>
+      <Link to="#projects" className={styles.link} onClick={toggleSidebar}>
         Projetos
-      </a>
-      <a href="#contact" onClick={toggleSidebar}>
+      </Link>
+      <Link to="#contact" className={styles.link} onClick={toggleSidebar}>
         Contato
-      </a>
+      </Link>
     </div>
   );
 };

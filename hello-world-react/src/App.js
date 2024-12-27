@@ -1,7 +1,7 @@
+import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Inicio from "./pages/Inicio";
 import SobreMim from "./pages/SobreMim";
-import React, { useState } from "react";
 import Navbar from "./components/navbar";
 import Sidebar from "./components/sidebar";
 import ParticlesComponent from "./components/ParticlesComponent";
@@ -14,22 +14,20 @@ function App() {
   };
 
   return (
-    <>
+    <BrowserRouter>
+      <ParticlesComponent />
       {!sidebarOpen && (
         <Navbar toggleSidebar={toggleSidebar} isSidebarOpen={sidebarOpen} />
       )}
       {sidebarOpen && (
         <Sidebar toggleSidebar={toggleSidebar} isSidebarOpen={sidebarOpen} />
       )}
-      <ParticlesComponent />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Inicio />} />
-          <Route path="/sobremim" element={<SobreMim />} />
-          <Route path="*" element={<div>Página não encontrada...</div>} />
-        </Routes>
-      </BrowserRouter>
-    </>
+      <Routes>
+        <Route path="/" element={<Inicio />} />
+        <Route path="/sobremim" element={<SobreMim />} />
+        <Route path="*" element={<div>Página não encontrada...</div>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
