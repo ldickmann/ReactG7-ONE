@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { useEffect, useState } from "react";
 import { loadSlim } from "@tsparticles/slim";
 import particlesConfig from "../particles.json";
+import TextComponent from "./TextComponent";
 
 const ParticlesComponent = () => {
   const [init, setInit] = useState(false);
@@ -19,11 +20,14 @@ const ParticlesComponent = () => {
   return (
     <>
       {init && (
-        <Particles
-          id="tsparticles"
-          particlesLoaded={particlesLoaded}
-          options={particlesConfig}
-        />
+        <>
+          <Particles
+            id="tsparticles"
+            particlesLoaded={particlesLoaded}
+            options={particlesConfig}
+          />
+          <TextComponent />
+        </>
       )}
     </>
   );
