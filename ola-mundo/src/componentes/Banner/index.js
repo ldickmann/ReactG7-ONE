@@ -22,12 +22,7 @@ export default function Banner() {
           alt="Círculo colorido"
           aria-hidden={true}
         />
-
-        <img
-          className={styles.minhaFoto}
-          src={minhaFoto}
-          alt="Foto do Antônio Evaldo sorrindo"
-        />
+        <img className={styles.minhaFoto} src={minhaFoto} alt="Minha foto" />
       </div>
     </div>
   );
