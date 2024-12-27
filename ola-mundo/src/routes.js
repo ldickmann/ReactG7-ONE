@@ -12,25 +12,9 @@ function AppRoutes() {
 
       <Routes>
         <Route path="/" element={<PaginaPadrao />}>
-          <Route path="/" element={<Inicio />} />
+          <Route index element={<Inicio />} />
           <Route path="/sobremim" element={<SobreMim />} />
         </Route>
-
-        {/* 
-        
-        Na rota "/" a estrutura a ser renderizada é:
-
-        <PaginaPadrao>
-          <Inicio />
-        </PaginaPadrao>
-
-        Na rota "/sobremim" a estrutura a ser renderizada é:
-
-        <PaginaPadrao>
-          <SobreMim />
-        </PaginaPadrao>
-        
-        */}
 
         <Route path="*" element={<div>Página não encontrada</div>} />
       </Routes>
