@@ -27,7 +27,7 @@ function AppRoutes() {
       )}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/sobremim" element={<AboutMe />} />
+        <Route path="/aboutMe" element={<AboutMe />} />
         <Route path="/skills" element={<Skills />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contacts />} />
