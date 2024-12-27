@@ -5,10 +5,9 @@ import "./navbar.css";
 const Navbar = ({ toggleSidebar, isSidebarOpen }) => {
   const [prevPos, setPrevPos] = useState(0);
   const [navbarStyle, setNavbarStyle] = useState({
-    top: "0",
     backgroundColor: "transparent",
-    opacity: "1",
   });
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 600);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,7 +32,7 @@ const Navbar = ({ toggleSidebar, isSidebarOpen }) => {
       ) {
         setNavbarStyle((prevStyle) => ({
           ...prevStyle,
-          backgroundColor: "rgba(0, 0, 0, 0.5)",
+          backgroundColor: "rgba(41, 33, 33, 0.5)",
         }));
       } else {
         setNavbarStyle((prevStyle) => ({
@@ -43,16 +42,26 @@ const Navbar = ({ toggleSidebar, isSidebarOpen }) => {
       }
     };
 
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 600);
+    };
+
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   }, [prevPos]);
 
   return (
     <nav id="navbar" style={navbarStyle}>
-      {!isSidebarOpen && (
+      {isMobile ? (
+        <div className="toggle-icon" onClick={toggleSidebar}>
+          <FaBars size={40} color="white" />
+        </div>
+      ) : (
         <ul>
           <li>
             <a href="#home">Home</a>
@@ -74,9 +83,6 @@ const Navbar = ({ toggleSidebar, isSidebarOpen }) => {
           </li>
         </ul>
       )}
-      <div id="hamburger-icon" onClick={toggleSidebar}>
-        <FaBars size={40} color="white" />
-      </div>
     </nav>
   );
 };

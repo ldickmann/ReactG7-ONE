@@ -15,8 +15,12 @@ function App() {
 
   return (
     <>
-      <Navbar toggleSidebar={toggleSidebar} isSidebarOpen={sidebarOpen} />
-      <Sidebar toggleSidebar={toggleSidebar} isSidebarOpen={sidebarOpen} />
+      {!sidebarOpen && (
+        <Navbar toggleSidebar={toggleSidebar} isSidebarOpen={sidebarOpen} />
+      )}
+      {sidebarOpen && (
+        <Sidebar toggleSidebar={toggleSidebar} isSidebarOpen={sidebarOpen} />
+      )}
       <ParticlesComponent />
       <BrowserRouter>
         <Routes>

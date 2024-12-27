@@ -1,16 +1,10 @@
 #sidebar {
-  height: 100vh;
-  width: 0;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  transition: width 0.3s, opacity 0.3s;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  position: fixed;
-  left: 0;
-  background-color: black;
-  transition: opacity 0.5s, width 0.5s;
-  color: azure;
-  z-index: 999; /* Para garantir que fique acima da navbar */
 }
 
 /* Links na sidebar */
@@ -36,14 +30,17 @@
   opacity: 1;
 }
 
-/* Botão de fechar a sidebar */
-#close-button {
-  cursor: pointer;
-  z-index: 1002;
-  margin-bottom: 2vw;
+/* Container Header da sidebar */
+.sidebar-header {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
 }
 
-#close-button:hover {
-  color: #66fcf1;
-  border: 0.5vw solid #66fcf1;
+/* Botão de fechar a sidebar */
+.close-icon {
+  align-self: flex-end;
+  margin-right: 3vh;
+  margin-top: 3vh;
+  cursor: pointer;
 }

@@ -11,8 +11,10 @@ const Sidebar = ({ toggleSidebar, isSidebarOpen }) => {
         opacity: isSidebarOpen ? "1" : "0",
       }}
     >
-      <div id="close-icon" onClick={toggleSidebar}>
-        <FaTimes size={40} color="white" />
+      <div className="sidebar-header">
+        <div className="close-icon" onClick={toggleSidebar}>
+          <FaTimes size={40} color="white" />
+        </div>
       </div>
       <a href="#home" onClick={toggleSidebar}>
         Home
