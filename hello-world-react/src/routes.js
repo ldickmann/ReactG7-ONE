@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Inicio from "./pages/Inicio";
-import SobreMim from "./pages/SobreMim";
+import Home from "./pages/Home";
+import AboutMe from "./pages/SobreMim";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import ParticlesComponent from "./components/ParticlesComponent";
+import Skills from "./pages/Skills";
+import Projects from "./pages/Projects";
+import Contacts from "./pages/Contacts";
 
 function AppRoutes() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -23,8 +26,11 @@ function AppRoutes() {
         <Sidebar toggleSidebar={toggleSidebar} isSidebarOpen={sidebarOpen} />
       )}
       <Routes>
-        <Route path="/" element={<Inicio />} />
-        <Route path="/sobremim" element={<SobreMim />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/aboutMe" element={<AboutMe />} />
+        <Route path="/skills" element={<Skills />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/contact" element={<Contacts />} />
         <Route path="*" element={<div>Página não encontrada...</div>} />
       </Routes>
     </BrowserRouter>
