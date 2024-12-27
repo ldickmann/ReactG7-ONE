@@ -1,7 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { FaTimes } from "react-icons/fa";
 import styles from "./toggleSidebar.module.css";
+import MenuLink from "../MenuLink";
 
 const Sidebar = ({ toggleSidebar, isSidebarOpen }) => {
   return (
@@ -18,18 +18,21 @@ const Sidebar = ({ toggleSidebar, isSidebarOpen }) => {
           <FaTimes size={40} color="white" />
         </div>
       </div>
-      <Link to="/" className={styles.link} onClick={toggleSidebar}>
+      <MenuLink to="/" onClick={toggleSidebar} isSidebar>
         Home
-      </Link>
-      <Link to="#about-me" className={styles.link} onClick={toggleSidebar}>
+      </MenuLink>
+      <MenuLink to="/about-me" onClick={toggleSidebar} isSidebar>
+        Sobre Mim
+      </MenuLink>
+      <MenuLink to="/skills" onClick={toggleSidebar} isSidebar>
         Skills
-      </Link>
-      <Link to="#projects" className={styles.link} onClick={toggleSidebar}>
+      </MenuLink>
+      <MenuLink to="/projects" onClick={toggleSidebar} isSidebar>
         Projetos
-      </Link>
-      <Link to="#contact" className={styles.link} onClick={toggleSidebar}>
+      </MenuLink>
+      <MenuLink to="/contact" onClick={toggleSidebar} isSidebar>
         Contato
-      </Link>
+      </MenuLink>
     </div>
   );
 };

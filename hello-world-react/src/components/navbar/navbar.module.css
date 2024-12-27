@@ -16,21 +16,12 @@
   padding: 0;
 }
 
-.link {
-  color: white;
-  text-decoration: none;
-  padding: 1rem 0.5rem;
-  border-radius: 3px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  font-size: 1.5rem;
-}
-
 .link:hover {
   background-color: #555;
   color: #fff;
 }
 
-/* Ícone para abrir a sidebar em dispositivos móveis */
+/* Ícone para abrir a sidebar em telas menores */
 .toggleIcon {
   cursor: pointer;
   display: flex;

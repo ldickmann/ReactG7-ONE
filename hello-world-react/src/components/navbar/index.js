@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import styles from "./navbar.module.css"; // Importando o CSS Module
+import MenuLink from "../MenuLink";
 
 const Navbar = ({ toggleSidebar, isSidebarOpen }) => {
   const [prevPos, setPrevPos] = useState(0);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 600);
+  const location = useLocation();
+
+  console.log(location);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,29 +40,19 @@ const Navbar = ({ toggleSidebar, isSidebarOpen }) => {
         ) : (
           <ul className={styles.navList}>
             <li>
-              <Link className={styles.link} to="/">
-                Home
-              </Link>
+              <MenuLink to="/">Home</MenuLink>
             </li>
             <li>
-              <Link className={styles.link} to="#about-me">
-                Sobre Mim
-              </Link>
+              <MenuLink to="/about-me">Sobre Mim</MenuLink>
             </li>
             <li>
-              <Link className={styles.link} to="#skills">
-                Skills
-              </Link>
+              <MenuLink to="/skills">Skills</MenuLink>
             </li>
             <li>
-              <Link className={styles.link} to="#projects">
-                Projetos
-              </Link>
+              <MenuLink to="/projects">Projetos</MenuLink>
             </li>
             <li>
-              <Link className={styles.link} to="#contact">
-                Contato
-              </Link>
+              <MenuLink to="/contact">Contato</MenuLink>
             </li>
           </ul>
         )}

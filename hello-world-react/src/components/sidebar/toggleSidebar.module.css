@@ -11,8 +11,8 @@
 }
 
 /* Links na sidebar */
-.link {
-  font-family: "Silkscreen", serif; 
+.sidebarLink {
+  font-family: "Silkscreen", serif;
   font-weight: 500;
   font-size: 3rem;
   width: 90%;
@@ -20,7 +20,7 @@
 }
 
 /* Links quando a sidebar está aberta */
-.sidebar.open .link {
+.sidebar.open .sidebarLink {
   opacity: 1;
   color: white;
 }

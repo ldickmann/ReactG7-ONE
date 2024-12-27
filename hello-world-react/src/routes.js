@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Inicio from "./pages/Inicio";
 import SobreMim from "./pages/SobreMim";
-import Navbar from "./components/navbar";
-import Sidebar from "./components/sidebar";
+import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
 import ParticlesComponent from "./components/ParticlesComponent";
 
-function App() {
+function AppRoutes() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
@@ -31,4 +31,4 @@ function App() {
   );
 }
 
-export default App;
+export default AppRoutes;
