@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import AboutMe from "./pages/SobreMim";
+import AboutMe from "./pages/AboutMe";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import ParticlesComponent from "./components/ParticlesComponent";
