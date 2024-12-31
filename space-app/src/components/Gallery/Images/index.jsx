@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { styled } from "styled-components";
 import ButtonIcon from "../../ButtonIcon";
 
@@ -40,9 +41,9 @@ const Footer = styled.footer`
 const Images = ({ photo, expanded = false }) => {
   return (
     <Figure $expanded={expanded} id={`photo-${photo.id}`}>
-      <img src={photo.src} alt={photo.title} />
+      <img src={photo.path} alt={photo.titulo} />
       <figcaption>
-        <h3>{photo.title}</h3>
+        <h3>{photo.titulo}</h3>
         <Footer>
           <h4>{photo.fonte}</h4>
           <ButtonIcon>
