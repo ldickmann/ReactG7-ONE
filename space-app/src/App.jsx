@@ -40,6 +40,7 @@ const GalleryContent = styled.div`
 
 const App = () => {
   const [fotosDaGaleria, setGalleryPhotos] = useState(photos);
+  const [selectedPhoto, setSelectedPhoto] = useState(null);
 
   return (
     <FundoGradiente>
@@ -53,11 +54,14 @@ const App = () => {
               backgroundImage={bannerImage}
               title="A galeria mais completa de fotos do espaço!"
             />
-            <Gallery photos={fotosDaGaleria} />
+            <Gallery
+              whenSelectPhoto={(photo) => setSelectedPhoto(photo)}
+              photos={fotosDaGaleria}
+            />
           </GalleryContent>
         </MainContainer>
       </AppContainer>
-      <DialogZoom />
+      <DialogZoom photo={selectedPhoto} />
     </FundoGradiente>
   );
 };
