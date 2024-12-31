@@ -19,6 +19,11 @@ const StylizedInput = styled.input`
   font-weight: 400;
   font-size: 20px;
   line-height: 20px;
+
+  @media (max-width: 768px) {
+    width: 26.625rem;
+    height: 3.5rem;
+  }
 `;
 
 const MagnifierIcon = styled.img`

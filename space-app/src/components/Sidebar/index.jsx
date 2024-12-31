@@ -8,14 +8,23 @@ const StyledSidebar = styled.ul`
   width: 212px;
 `;
 
+const StyledAside = styled.aside`
+  @media (max-width: 768px) {
+    width: 100%;
+    display: flex;
+    height: 100%;
+    padding: 0 1.5rem;
+  }
+`;
+
 const Sidebar = () => {
   return (
-    <aside>
+    <StyledAside>
       <nav>
         <StyledSidebar>
           <ItemNavigation
-            activeIcon="/icons/home-active.png"
-            inactiveIcon="/icons/home-inactive.png"
+            activeIcon="/icons/home-ativo.png"
+            inactiveIcon="/icons/home-inativo.png"
             active={true}
           >
             Início
@@ -46,7 +55,7 @@ const Sidebar = () => {
           </ItemNavigation>
         </StyledSidebar>
       </nav>
-    </aside>
+    </StyledAside>
   );
 };
 

@@ -41,7 +41,6 @@ const GalleryContent = styled.div`
 
 const App = () => {
   const [fotosDaGaleria, setGalleryPhotos] = useState(photos);
-  const [selectedPhoto, setSelectedPhoto] = useState(null);
   const [filter, setFilter] = useState("");
   const [tag, setTag] = useState(0);
   const [photoWithZoom, setPhotoWithZoom] = useState(null);

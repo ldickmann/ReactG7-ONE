@@ -8,6 +8,10 @@ const HeaderStylized = styled.header`
   img {
     max-width: 212px;
   }
+
+  @media (max-width: 768px) {
+    padding: 2.8rem 1.5rem;
+  }
 `;
 
 // eslint-disable-next-line react/prop-types

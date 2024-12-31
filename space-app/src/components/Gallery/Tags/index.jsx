@@ -6,6 +6,10 @@ const BarTags = styled.div`
   align-items: center;
   gap: 64px;
   margin-top: 56px;
+
+  @media (max-width: 768px) {
+    gap: 24px;
+  }
 `;
 
 // const TagsContainer = styled.section`
