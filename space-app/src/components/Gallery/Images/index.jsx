@@ -39,6 +39,15 @@ const Footer = styled.footer`
 `;
 
 const Images = ({ photo, spread = false, requestToZoom, toggleFavorite }) => {
+  // const favoriteIcon = photo.favorite
+  //   ? "/icons/favorito-ativo.png"
+  //   : "/icons/favorito.png";
+
+  let favoriteIcon = "/icons/favorito.png";
+  if (photo.favorite) {
+    favoriteIcon = "/icons/favorito-ativo.png";
+  }
+
   return (
     <Figure $spread={spread} id={`photo-${photo.id}`}>
       <img src={photo.path} alt={photo.alt} />
@@ -47,7 +56,7 @@ const Images = ({ photo, spread = false, requestToZoom, toggleFavorite }) => {
         <Footer>
           <h4>{photo.fonte}</h4>
           <ButtonIcon onClick={() => toggleFavorite(photo)}>
-            <img src="/icons/favorito.png" alt="Icone de favorito" />
+            <img src={favoriteIcon} alt="Icone de favorito" />
           </ButtonIcon>
           {!spread && (
             <ButtonIcon
