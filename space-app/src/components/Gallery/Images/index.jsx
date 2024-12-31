@@ -38,7 +38,7 @@ const Footer = styled.footer`
   align-items: center;
 `;
 
-const Images = ({ photo, spread = false, requestToZoom }) => {
+const Images = ({ photo, spread = false, requestToZoom, toggleFavorite }) => {
   return (
     <Figure $spread={spread} id={`photo-${photo.id}`}>
       <img src={photo.path} alt={photo.alt} />
@@ -46,7 +46,7 @@ const Images = ({ photo, spread = false, requestToZoom }) => {
         <h3>{photo.titulo}</h3>
         <Footer>
           <h4>{photo.fonte}</h4>
-          <ButtonIcon>
+          <ButtonIcon onClick={() => toggleFavorite(photo)}>
             <img src="/icons/favorito.png" alt="Icone de favorito" />
           </ButtonIcon>
           {!spread && (

@@ -42,6 +42,10 @@ const App = () => {
   const [fotosDaGaleria, setGalleryPhotos] = useState(photos);
   const [selectedPhoto, setSelectedPhoto] = useState(null);
 
+  const toggleFavorite = (photo) => {
+    console.log("Favoritar", photo);
+  };
+
   return (
     <FundoGradiente>
       <StylesGlobals />
@@ -56,6 +60,7 @@ const App = () => {
             />
             <Gallery
               whenSelectPhoto={(photo) => setSelectedPhoto(photo)}
+              toggleFavorite={toggleFavorite}
               photos={fotosDaGaleria}
             />
           </GalleryContent>

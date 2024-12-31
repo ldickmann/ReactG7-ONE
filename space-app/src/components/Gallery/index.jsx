@@ -20,7 +20,7 @@ const ImageContainer = styled.div`
 `;
 
 // eslint-disable-next-line react/prop-types
-const Gallery = ({ photos = [], whenSelectPhoto }) => {
+const Gallery = ({ photos = [], whenSelectPhoto, toggleFavorite }) => {
   return (
     <>
       <Tags />
@@ -31,6 +31,7 @@ const Gallery = ({ photos = [], whenSelectPhoto }) => {
             {photos.map((photo) => (
               <Images
                 requestToZoom={whenSelectPhoto}
+                toggleFavorite={toggleFavorite}
                 key={photo.id}
                 photo={photo}
               />
