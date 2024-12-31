@@ -8,6 +8,7 @@ import Gallery from "./components/Gallery";
 
 import photos from "./photos.json";
 import { useState } from "react";
+import DialogZoom from "./components/DialogZoom";
 
 const FundoGradiente = styled.div`
   background: linear-gradient(
@@ -56,6 +57,7 @@ const App = () => {
           </GalleryContent>
         </MainContainer>
       </AppContainer>
+      <DialogZoom />
     </FundoGradiente>
   );
 };
