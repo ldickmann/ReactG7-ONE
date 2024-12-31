@@ -16,7 +16,20 @@
 
 ## Diretórios
 
--
+- `hello-world-react/`: Projeto iniciado para adaptação do meu portfólio para uma aplicação React
+- `ola-mundo/`: Projeto de blog em React.
+- `ReactComponents/`: Biblioteca de componentes reutilizáveis em React.
+- `ReactJS-organo/`: Projeto de organização de times em React.
+- `space-app/`: Aplicação de galeria de fotos do espaço.
+
+## Introdução
+
+Este repositório contém projetos desenvolvidos durante a Fase 4 do Programa Oracle ONE, focado na especialização em React. O objetivo é aplicar os conhecimentos adquiridos nos cursos para desenvolver aplicações web utilizando React.
+
+## Links Deploy Vercel
+
+- Page do projeto desenvolvido no **ReactJS-organo**: https://react-digimons-organo-one.vercel.app/
+- Page do projeto desenvolvido no **ola-mundo**: https://react-ola-mundo-one.vercel.app/
 
 ## Links Deploy Vercel
 
