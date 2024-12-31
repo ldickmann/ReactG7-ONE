@@ -27,6 +27,12 @@ const DialogStyle = styled.dialog`
       right: 60px;
     }
   }
+
+  @media (max-width: 768px) {
+    max-width: 768px;
+    width: 100%;
+    top: 143px;
+  }
 `;
 
 // eslint-disable-next-line react/prop-types
