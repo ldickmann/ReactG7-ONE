@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { useState, useEffect } from "react";
 import ItemNavigation from "./ItemNavigation";
 
 const StyledSidebar = styled.ul`
@@ -6,6 +7,10 @@ const StyledSidebar = styled.ul`
   padding: 0;
   margin: 0;
   width: 212px;
+
+  @media (max-width: 425px) {
+    display: ${(props) => (props.open ? "block" : "none")};
+  }
 `;
 
 const StyledAside = styled.aside`
@@ -13,14 +18,18 @@ const StyledAside = styled.aside`
     display: flex;
     height: 100%;
     padding: 0 1.5rem;
+
+    @media (max-width: 425px) {
+      display: ${(props) => (props.open ? "block" : "none")};
+    }
   }
 `;
 
-const Sidebar = () => {
+const Sidebar = ({ isMobile, isOpen }) => {
   return (
-    <StyledAside>
+    <StyledAside open={isOpen}>
       <nav>
-        <StyledSidebar>
+        <StyledSidebar open={isOpen}>
           <ItemNavigation
             activeIcon="/icons/home-ativo.png"
             inactiveIcon="/icons/home-inativo.png"

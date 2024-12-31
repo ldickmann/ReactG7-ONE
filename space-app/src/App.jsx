@@ -7,9 +7,19 @@ import Banner from "./components/Banner";
 import Gallery from "./components/Gallery";
 import DialogZoom from "./components/DialogZoom";
 import Footer from "./components/Footer";
+import debounce from "lodash.debounce";
 
 import bannerImage from "./assets/banner.png";
 import photos from "./photos.json";
+
+const MainContainer = styled.main.withConfig({
+  shouldForwardProp: (prop) => !["isMobile", "isTablet"].includes(prop),
+})`
+  display: flex;
+  gap: 24px;
+  flex-direction: ${(props) =>
+    props.isMobile || props.isTablet ? "column" : "row"};
+`;
 
 const FundoGradiente = styled.div`
   background: linear-gradient(
@@ -28,51 +38,30 @@ const AppContainer = styled.div`
   max-width: 100%;
 `;
 
-const MainContainer = styled.main`
-  display: flex;
-  gap: 24px;
-`;
-
 const GalleryContent = styled.div`
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 `;
 
-/**
- * The main component of the application.
- *
- * @component
- * @returns {JSX.Element} The rendered component.
- *
- * @example
- * return <App />;
- *
- * @description
- * This component manages the state and layout of the application. It includes:
- * - State variables for gallery photos, filter, tag, photo with zoom, and tablet view detection.
- * - An effect to handle window resize events and update the tablet view state.
- * - An effect to filter photos based on the selected tag and filter text.
- * - A function to toggle the favorite status of a photo.
- * - A function to render the layout for tablet view.
- * - The main render function that conditionally renders the layout based on the tablet view state.
- *
- * @function
- * @name App
- */
 const App = () => {
   const [fotosDaGaleria, setGalleryPhotos] = useState(photos);
   const [filter, setFilter] = useState("");
   const [tag, setTag] = useState(0);
   const [photoWithZoom, setPhotoWithZoom] = useState(null);
-
-  // State variable to determine if the current window width is less than or equal to 768 pixels.
   const [isTablet, setIsTablet] = useState(window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 425);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
 
   useEffect(() => {
-    const handleResize = () => {
+    const handleResize = debounce(() => {
       setIsTablet(window.innerWidth <= 768);
-    };
+      setIsMobile(window.innerWidth <= 425);
+    }, 100);
 
     window.addEventListener("resize", handleResize);
 
@@ -99,71 +88,39 @@ const App = () => {
       });
     }
     setGalleryPhotos(
-      fotosDaGaleria.map((photoGallery) => {
-        return {
-          ...photoGallery,
-          favorite:
-            photoGallery.id === photo.id
-              ? !photo.favorite
-              : photoGallery.favorite,
-        };
-      })
+      fotosDaGaleria.map((photoGallery) =>
+        photoGallery.id === photo.id
+          ? { ...photoGallery, favorite: !photo.favorite }
+          : photoGallery
+      )
     );
   };
 
-  // Function to render the layout for tablet view.
-  const renderTabletLayout = () => {
-    return (
-      <MainContainer style={{ flexDirection: "column" }}>
-        <div
-          style={{
-            width: "100%",
-            display: "flex",
-          }}
-        >
-          <Sidebar />
-          <Banner
-            backgroundImage={bannerImage}
-            title="A galeria mais completa de fotos do espaço!"
-          />
-        </div>
-        <GalleryContent style={{ width: "100%" }}>
-          <Gallery
-            photos={fotosDaGaleria}
-            setTag={setTag}
-            whenSelectPhoto={(photo) => setPhotoWithZoom(photo)}
-            toggleFavorite={toToggleFavorite}
-          />
-        </GalleryContent>
-      </MainContainer>
-    );
-  };
-
-  // Main render function that conditionally renders the layout
   return (
     <FundoGradiente>
       <StylesGlobals />
       <AppContainer>
-        <Header filter={filter} setFilter={setFilter} />
-        {isTablet ? (
-          renderTabletLayout()
-        ) : (
-          <MainContainer>
-            <Sidebar />
-            <GalleryContent>
-              <Banner
-                backgroundImage={bannerImage}
-                title="A galeria mais completa de fotos do espaço!"
-              />
-              <Gallery
-                photos={fotosDaGaleria}
-                setTag={setTag}
-                whenSelectPhoto={(photo) => setPhotoWithZoom(photo)}
-                toggleFavorite={toToggleFavorite}
-              />
-            </GalleryContent>
-          </MainContainer>
-        )}
+        <Header
+          filter={filter}
+          setFilter={setFilter}
+          isMobile={isMobile}
+          toggleSidebar={toggleSidebar}
+        />
+        <MainContainer isMobile={isMobile} isTablet={isTablet}>
+          <Sidebar isMobile={isMobile} isOpen={isOpen} />
+          <GalleryContent>
+            <Banner
+              backgroundImage={bannerImage || "/assets/default-banner.png"}
+              title="A galeria mais completa de fotos do espaço!"
+            />
+            <Gallery
+              photos={fotosDaGaleria}
+              setTag={setTag}
+              whenSelectPhoto={(photo) => setPhotoWithZoom(photo)}
+              toggleFavorite={toToggleFavorite}
+            />
+          </GalleryContent>
+        </MainContainer>
       </AppContainer>
       <DialogZoom
         photo={photoWithZoom}
