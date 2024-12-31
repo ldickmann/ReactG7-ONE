@@ -10,7 +10,6 @@ const StyledSidebar = styled.ul`
 
 const StyledAside = styled.aside`
   @media (max-width: 768px) {
-    width: 100%;
     display: flex;
     height: 100%;
     padding: 0 1.5rem;

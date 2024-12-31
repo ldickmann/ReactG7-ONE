@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { styled } from "styled-components";
 import StylesGlobals from "./components/StylesGlobals";
 import Header from "./components/Header";
@@ -5,9 +6,7 @@ import Sidebar from "./components/Sidebar";
 import Banner from "./components/Banner";
 import bannerImage from "./assets/banner.png";
 import Gallery from "./components/Gallery";
-
 import photos from "./photos.json";
-import { useEffect, useState } from "react";
 import DialogZoom from "./components/DialogZoom";
 import Footer from "./components/Footer";
 
@@ -39,11 +38,47 @@ const GalleryContent = styled.div`
   flex-grow: 1;
 `;
 
+/**
+ * The main component of the application.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered component.
+ *
+ * @example
+ * return <App />;
+ *
+ * @description
+ * This component manages the state and layout of the application. It includes:
+ * - State variables for gallery photos, filter, tag, photo with zoom, and tablet view detection.
+ * - An effect to handle window resize events and update the tablet view state.
+ * - An effect to filter photos based on the selected tag and filter text.
+ * - A function to toggle the favorite status of a photo.
+ * - A function to render the layout for tablet view.
+ * - The main render function that conditionally renders the layout based on the tablet view state.
+ *
+ * @function
+ * @name App
+ */
 const App = () => {
   const [fotosDaGaleria, setGalleryPhotos] = useState(photos);
   const [filter, setFilter] = useState("");
   const [tag, setTag] = useState(0);
   const [photoWithZoom, setPhotoWithZoom] = useState(null);
+
+  // State variable to determine if the current window width is less than or equal to 768 pixels.
+  const [isTablet, setIsTablet] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsTablet(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     const filteredPhotos = photos.filter((photo) => {
@@ -75,26 +110,59 @@ const App = () => {
     );
   };
 
+  // Function to render the layout for tablet view.
+  const renderTabletLayout = () => {
+    return (
+      <MainContainer style={{ flexDirection: "column" }}>
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+          }}
+        >
+          <Sidebar />
+          <Banner
+            backgroundImage={bannerImage}
+            title="A galeria mais completa de fotos do espaço!"
+          />
+        </div>
+        <GalleryContent style={{ width: "100%" }}>
+          <Gallery
+            photos={fotosDaGaleria}
+            setTag={setTag}
+            whenSelectPhoto={(photo) => setPhotoWithZoom(photo)}
+            toggleFavorite={toToggleFavorite}
+          />
+        </GalleryContent>
+      </MainContainer>
+    );
+  };
+
+  // Main render function that conditionally renders the layout
   return (
     <FundoGradiente>
       <StylesGlobals />
       <AppContainer>
         <Header filter={filter} setFilter={setFilter} />
-        <MainContainer>
-          <Sidebar />
-          <GalleryContent>
-            <Banner
-              backgroundImage={bannerImage}
-              title="A galeria mais completa de fotos do espaço!"
-            />
-            <Gallery
-              photos={fotosDaGaleria}
-              setTag={setTag}
-              whenSelectPhoto={(photo) => setPhotoWithZoom(photo)}
-              toggleFavorite={toToggleFavorite}
-            />
-          </GalleryContent>
-        </MainContainer>
+        {isTablet ? (
+          renderTabletLayout()
+        ) : (
+          <MainContainer>
+            <Sidebar />
+            <GalleryContent>
+              <Banner
+                backgroundImage={bannerImage}
+                title="A galeria mais completa de fotos do espaço!"
+              />
+              <Gallery
+                photos={fotosDaGaleria}
+                setTag={setTag}
+                whenSelectPhoto={(photo) => setPhotoWithZoom(photo)}
+                toggleFavorite={toToggleFavorite}
+              />
+            </GalleryContent>
+          </MainContainer>
+        )}
       </AppContainer>
       <DialogZoom
         photo={photoWithZoom}
