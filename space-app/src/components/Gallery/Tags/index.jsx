@@ -8,25 +8,25 @@ const BarTags = styled.div`
   margin-top: 56px;
 
   @media (max-width: 768px) {
-    gap: 24px;
+    margin: 0 1rem;
+    gap: 0.5rem;
   }
 `;
 
-// const TagsContainer = styled.section`
-//   display: flex;
-//   align-items: center;
-//   gap: 64px;
-//   margin-top: 56px;
-// `;
-
 const TagTitle = styled.h3`
   color: #d9d9d9;
-  font-size: 24px;
+  font-size: 1.5rem;
   margin: 0;
+
+  @media (max-width: 768px) {
+    font-weight: 400;
+    white-space: nowrap;
+    width: 100%;
+  }
 `;
 
 const Tag = styled.button`
-  font-size: 24px;
+  font-size: 1.5rem;
   color: #ffffff;
   background: rgba(217, 217, 217, 0.3);
   border-radius: 10px;
@@ -44,6 +44,10 @@ const Div = styled.div`
   display: flex;
   gap: 24px;
   justify-content: end;
+
+  @media (max-width: 768px) {
+    gap: 1rem;
+  }
 `;
 
 // eslint-disable-next-line react/prop-types

@@ -4,11 +4,12 @@ import StylesGlobals from "./components/StylesGlobals";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Banner from "./components/Banner";
-import bannerImage from "./assets/banner.png";
 import Gallery from "./components/Gallery";
-import photos from "./photos.json";
 import DialogZoom from "./components/DialogZoom";
 import Footer from "./components/Footer";
+
+import bannerImage from "./assets/banner.png";
+import photos from "./photos.json";
 
 const FundoGradiente = styled.div`
   background: linear-gradient(
