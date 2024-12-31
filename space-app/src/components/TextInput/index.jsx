@@ -29,10 +29,15 @@ const MagnifierIcon = styled.img`
   height: 38px;
 `;
 
-const TextInput = (props) => {
+// eslint-disable-next-line react/prop-types
+const TextInput = ({ setFilter }) => {
   return (
     <StylizedContainer>
-      <StylizedInput placeholder="O que você procura?" {...props} />
+      <StylizedInput
+        type="text"
+        placeholder="O que você procura?"
+        onChange={(event) => setFilter(event.target.value)}
+      />
       <MagnifierIcon src={search} alt="Ícone de lupa" />
     </StylizedContainer>
   );

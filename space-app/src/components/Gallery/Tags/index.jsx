@@ -1,12 +1,19 @@
 import tags from "./tags.json";
 import styled from "styled-components";
 
-const TagsContainer = styled.section`
+const BarTags = styled.div`
   display: flex;
   align-items: center;
   gap: 64px;
   margin-top: 56px;
 `;
+
+// const TagsContainer = styled.section`
+//   display: flex;
+//   align-items: center;
+//   gap: 64px;
+//   margin-top: 56px;
+// `;
 
 const TagTitle = styled.h3`
   color: #d9d9d9;
@@ -35,16 +42,19 @@ const Div = styled.div`
   justify-content: end;
 `;
 
-const Tags = () => {
+// eslint-disable-next-line react/prop-types
+const Tags = ({ setTag }) => {
   return (
-    <TagsContainer>
+    <BarTags>
       <TagTitle>Busque por tags:</TagTitle>
       <Div>
         {tags.map((tag) => (
-          <Tag key={tag.id}>{tag.titulo}</Tag>
+          <Tag key={tag.id} onClick={() => setTag(tag.tag)}>
+            {tag.titulo}
+          </Tag>
         ))}
       </Div>
-    </TagsContainer>
+    </BarTags>
   );
 };
 

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import styled from "styled-components";
 import Title from "../Title";
 import Tags from "./Tags";
@@ -19,21 +20,20 @@ const ImageContainer = styled.div`
   gap: 24px;
 `;
 
-// eslint-disable-next-line react/prop-types
-const Gallery = ({ photos = [], whenSelectPhoto, toggleFavorite }) => {
+const Gallery = ({ photos = [], setTag, whenSelectPhoto, toggleFavorite }) => {
   return (
     <>
-      <Tags />
+      <Tags setTag={setTag} />
       <GalleryContainer>
         <FluidSection>
           <Title>Navegue pela galeria</Title>
           <ImageContainer>
             {photos.map((photo) => (
               <Images
-                requestToZoom={whenSelectPhoto}
-                toggleFavorite={toggleFavorite}
                 key={photo.id}
                 photo={photo}
+                requestToZoom={whenSelectPhoto}
+                toggleFavorite={() => toggleFavorite(photo)}
               />
             ))}
           </ImageContainer>

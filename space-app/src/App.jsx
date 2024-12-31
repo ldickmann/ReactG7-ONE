@@ -7,8 +7,9 @@ import bannerImage from "./assets/banner.png";
 import Gallery from "./components/Gallery";
 
 import photos from "./photos.json";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DialogZoom from "./components/DialogZoom";
+import Footer from "./components/Footer";
 
 const FundoGradiente = styled.div`
   background: linear-gradient(
@@ -41,12 +42,25 @@ const GalleryContent = styled.div`
 const App = () => {
   const [fotosDaGaleria, setGalleryPhotos] = useState(photos);
   const [selectedPhoto, setSelectedPhoto] = useState(null);
+  const [filter, setFilter] = useState("");
+  const [tag, setTag] = useState(0);
+  const [photoWithZoom, setPhotoWithZoom] = useState(null);
 
-  const toggleFavorite = (photo) => {
-    if (photo.id === selectedPhoto?.id) {
-      setSelectedPhoto({
-        ...selectedPhoto,
-        favorite: !selectedPhoto.favorite,
+  useEffect(() => {
+    const filteredPhotos = photos.filter((photo) => {
+      const filterByTag = !tag || photo.tagId === tag;
+      const filterByTitle =
+        !filter || photo.titulo.toLowerCase().includes(filter.toLowerCase());
+      return filterByTag && filterByTitle;
+    });
+    setGalleryPhotos(filteredPhotos);
+  }, [filter, tag]);
+
+  const toToggleFavorite = (photo) => {
+    if (photo.id === photoWithZoom?.id) {
+      setPhotoWithZoom({
+        ...photoWithZoom,
+        favorite: !photoWithZoom.favorite,
       });
     }
     setGalleryPhotos(
@@ -66,7 +80,7 @@ const App = () => {
     <FundoGradiente>
       <StylesGlobals />
       <AppContainer>
-        <Header />
+        <Header filter={filter} setFilter={setFilter} />
         <MainContainer>
           <Sidebar />
           <GalleryContent>
@@ -75,18 +89,20 @@ const App = () => {
               title="A galeria mais completa de fotos do espaço!"
             />
             <Gallery
-              whenSelectPhoto={(photo) => setSelectedPhoto(photo)}
-              toggleFavorite={toggleFavorite}
               photos={fotosDaGaleria}
+              setTag={setTag}
+              whenSelectPhoto={(photo) => setPhotoWithZoom(photo)}
+              toggleFavorite={toToggleFavorite}
             />
           </GalleryContent>
         </MainContainer>
       </AppContainer>
       <DialogZoom
-        photo={selectedPhoto}
-        whenClosing={() => setSelectedPhoto(null)}
-        toggleFavorite={toggleFavorite}
+        photo={photoWithZoom}
+        whenClosing={() => setPhotoWithZoom(null)}
+        toggleFavorite={toToggleFavorite}
       />
+      <Footer />
     </FundoGradiente>
   );
 };

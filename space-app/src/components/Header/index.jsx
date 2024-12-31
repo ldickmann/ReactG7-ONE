@@ -10,11 +10,12 @@ const HeaderStylized = styled.header`
   }
 `;
 
-const Header = () => {
+// eslint-disable-next-line react/prop-types
+const Header = ({ setFilter }) => {
   return (
     <HeaderStylized>
       <img src="/images/logo.png" alt="" />
-      <TextInput />
+      <TextInput setFilter={setFilter} />
     </HeaderStylized>
   );
 };
