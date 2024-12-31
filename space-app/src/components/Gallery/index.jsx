@@ -8,6 +8,10 @@ import Images from "./Images";
 const GalleryContainer = styled.div`
   display: flex;
   gap: 24px;
+
+  @media (max-width: 768px) {
+    margin: 2.5rem 0 0 1.75rem;
+  }
 `;
 
 const FluidSection = styled.section`
@@ -19,6 +23,10 @@ const ImageContainer = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 24px;
+
+  @media (max-width: 768px) {
+    gap: 14px;
+  }
 `;
 
 const Gallery = ({ photos = [], setTag, whenSelectPhoto, toggleFavorite }) => {

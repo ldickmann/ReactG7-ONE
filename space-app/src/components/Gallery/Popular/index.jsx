@@ -12,6 +12,11 @@ const ColumnPhotos = styled.div`
 const Imagem = styled.img`
   max-width: 212px;
   border-radius: 20px;
+
+  @media (max-width: 768px) {
+    width: 156px;
+    height: 118px;
+  }
 `;
 
 const Button = styled.button`
@@ -27,9 +32,16 @@ const Button = styled.button`
   margin-top: 16px;
 `;
 
+const SectionTablet = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 24px;
+`;
+
 const Popular = () => {
   return (
-    <section>
+    <SectionTablet>
       <Title $alignment="center">Populares</Title>
       <ColumnPhotos>
         {photos.map((photo) => (
@@ -37,7 +49,7 @@ const Popular = () => {
         ))}
       </ColumnPhotos>
       <Button>Ver Mais</Button>
-    </section>
+    </SectionTablet>
   );
 };
 
