@@ -29,15 +29,21 @@ const Tag = styled.button`
   }
 `;
 
+const Div = styled.div`
+  display: flex;
+  gap: 24px;
+  justify-content: end;
+`;
+
 const Tags = () => {
   return (
     <TagsContainer>
       <TagTitle>Busque por tags:</TagTitle>
-      <>
+      <Div>
         {tags.map((tag) => (
           <Tag key={tag.id}>{tag.titulo}</Tag>
         ))}
-      </>
+      </Div>
     </TagsContainer>
   );
 };

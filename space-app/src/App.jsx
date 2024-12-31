@@ -61,7 +61,10 @@ const App = () => {
           </GalleryContent>
         </MainContainer>
       </AppContainer>
-      <DialogZoom photo={selectedPhoto} />
+      <DialogZoom
+        photo={selectedPhoto}
+        whenClosing={() => setSelectedPhoto(null)}
+      />
     </FundoGradiente>
   );
 };

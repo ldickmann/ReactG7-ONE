@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 import ButtonIcon from "../../ButtonIcon";
 
 const Figure = styled.figure`
-  width: ${(props) => (props.$expanded ? "90%" : "460px")};
+  width: ${(props) => (props.$spread ? "90%" : "460px")};
   max-width: 100%;
   margin: 0;
   display: flex;
@@ -38,9 +38,9 @@ const Footer = styled.footer`
   align-items: center;
 `;
 
-const Images = ({ photo, expanded = false, requestToZoom }) => {
+const Images = ({ photo, spread = false, requestToZoom }) => {
   return (
-    <Figure $expanded={expanded} id={`photo-${photo.id}`}>
+    <Figure $spread={spread} id={`photo-${photo.id}`}>
       <img src={photo.path} alt={photo.alt} />
       <figcaption>
         <h3>{photo.titulo}</h3>
@@ -49,9 +49,9 @@ const Images = ({ photo, expanded = false, requestToZoom }) => {
           <ButtonIcon>
             <img src="/icons/favorito.png" alt="Icone de favorito" />
           </ButtonIcon>
-          {!expanded && (
+          {!spread && (
             <ButtonIcon
-              aria-hidden={expanded}
+              aria-hidden={spread}
               onClick={() => requestToZoom(photo)}
             >
               <img src="/icons/expandir.png" alt="Icone de expandir" />

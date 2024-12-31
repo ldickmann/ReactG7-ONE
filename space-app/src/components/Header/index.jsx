@@ -13,7 +13,7 @@ const HeaderStylized = styled.header`
 const Header = () => {
   return (
     <HeaderStylized>
-      <img src="/images/logo.png" alt="Logo" />
+      <img src="/images/logo.png" alt="" />
       <TextInput />
     </HeaderStylized>
   );
