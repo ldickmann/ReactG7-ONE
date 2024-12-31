@@ -43,6 +43,12 @@ const App = () => {
   const [selectedPhoto, setSelectedPhoto] = useState(null);
 
   const toggleFavorite = (photo) => {
+    if (photo.id === selectedPhoto?.id) {
+      setSelectedPhoto({
+        ...selectedPhoto,
+        favorite: !selectedPhoto.favorite,
+      });
+    }
     setGalleryPhotos(
       fotosDaGaleria.map((photoGallery) => {
         return {
@@ -79,6 +85,7 @@ const App = () => {
       <DialogZoom
         photo={selectedPhoto}
         whenClosing={() => setSelectedPhoto(null)}
+        toggleFavorite={toggleFavorite}
       />
     </FundoGradiente>
   );

@@ -30,14 +30,18 @@ const DialogStyle = styled.dialog`
 `;
 
 // eslint-disable-next-line react/prop-types
-const DialogZoom = ({ photo, whenClosing }) => {
+const DialogZoom = ({ photo, whenClosing, toggleFavorite }) => {
   return (
     <>
       {photo && (
         <>
           <Overlay />
           <DialogStyle open={!!photo} onClose={whenClosing}>
-            <Images photo={photo} spread={true} />
+            <Images
+              photo={photo}
+              spread={true}
+              toggleFavorite={toggleFavorite}
+            />
             <form method="dialog">
               <ButtonIcon formMethod="dialog">
                 <img src="/icons/fechar.png" alt="Icone de fechar" />
