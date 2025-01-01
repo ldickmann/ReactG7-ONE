@@ -11,6 +11,11 @@ const FooterContainer = styled.footer`
   padding: 10px;
   color: white;
   margin-top: 5rem;
+
+  @media (max-width: 430px) {
+    flex-direction: column;
+    height: 6rem;
+  }
 `;
 
 const IconsContainer = styled.div`
@@ -28,6 +33,10 @@ const IconsContainer = styled.div`
       color: #ccc;
     }
   }
+
+  @media (max-width: 430px) {
+    order: 2;
+  }
 `;
 
 const FooterText = styled.div`
@@ -35,6 +44,11 @@ const FooterText = styled.div`
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   font-weight: 500;
+
+  @media (max-width: 430px) {
+    order: 1;
+    margin-top: 1rem;
+  }
 `;
 
 const Footer = () => {

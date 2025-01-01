@@ -6,6 +6,7 @@ const StylizedContainer = styled.div`
   display: inline-block;
 
   @media (max-width: 430px) {
+    max-width: 100%;
     margin-top: 2.5rem;
   }
 `;
@@ -30,9 +31,7 @@ const StylizedInput = styled.input`
   }
 
   @media (max-width: 430px) {
-    width: 24rem;
-    height: 3.5rem;
-    border-radius: 0.625rem;
+    max-width: 100%;
   }
 `;
 

@@ -42,6 +42,19 @@ const Figure = styled.figure`
       }
     }
   }
+
+  @media (max-width: 430px) {
+    ${(props) => (props.$spread ? "width: 100%" : "width: 95%;")}
+    figcaption {
+      padding: 0.5rem;
+      h3 {
+        font-size: 14px;
+      }
+      h4 {
+        font-size: 12px;
+      }
+    }
+  }
 `;
 
 const Footer = styled.footer`

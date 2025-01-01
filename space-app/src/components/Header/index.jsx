@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 import TextInput from "../TextInput";
 import { FaBars } from "react-icons/fa";
+
 const HeaderStylized = styled.header`
   padding: 60px 0;
   display: flex;
@@ -23,18 +24,14 @@ const HeaderStylized = styled.header`
     img {
       max-width: 120px;
     }
-    justify-content: flex-end;
   }
 `;
 
 const MenuIcon = styled.div`
   color: #fff;
-  display: none;
-  margin-right: 14rem;
+  display: flex;
+  justify-content: space-around;
   cursor: pointer;
-  @media (max-width: 430px) {
-    display: block;
-  }
 `;
 
 const Image = styled.img`
@@ -54,7 +51,7 @@ const Header = ({ setFilter, isMobile, toggleSidebar }) => {
     <HeaderStylized>
       {isMobile && (
         <MenuIcon onClick={toggleSidebar}>
-          <FaBars size={24} />
+          <FaBars size={27} />
         </MenuIcon>
       )}
       <Image src="/images/logo.png" alt="logo" />

@@ -60,7 +60,7 @@ const App = () => {
   useEffect(() => {
     const handleResize = debounce(() => {
       setIsTablet(window.innerWidth <= 768);
-      setIsMobile(window.innerWidth <= 425);
+      setIsMobile(window.innerWidth <= 430);
     }, 100);
 
     window.addEventListener("resize", handleResize);

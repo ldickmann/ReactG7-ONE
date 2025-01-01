@@ -1,5 +1,4 @@
 import { styled } from "styled-components";
-import { useState, useEffect } from "react";
 import ItemNavigation from "./ItemNavigation";
 
 const StyledSidebar = styled.ul`
@@ -8,7 +7,7 @@ const StyledSidebar = styled.ul`
   margin: 0;
   width: 212px;
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     display: ${(props) => (props.open ? "block" : "none")};
   }
 `;
