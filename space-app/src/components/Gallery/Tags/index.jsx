@@ -11,6 +11,14 @@ const BarTags = styled.div`
     margin: 0 1rem;
     gap: 0.5rem;
   }
+
+  @media (max-width: 430px) {
+    padding-inline: 1rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
 `;
 
 const TagTitle = styled.h3`
@@ -29,7 +37,7 @@ const Tag = styled.button`
   font-size: 1.5rem;
   color: #ffffff;
   background: rgba(217, 217, 217, 0.3);
-  border-radius: 10px;
+  border-radius: 0.625rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
   padding: 12px;
@@ -37,6 +45,11 @@ const Tag = styled.button`
   border: 2px solid transparent;
   &:hover {
     border-color: #c98cf1;
+  }
+
+  @media (max-width: 430px) {
+    font-size: 1rem;
+    padding: 0.5rem;
   }
 `;
 
@@ -47,6 +60,10 @@ const Div = styled.div`
 
   @media (max-width: 768px) {
     gap: 1rem;
+  }
+
+  @media (max-width: 430px) {
+    gap: 0.5rem;
   }
 `;
 
