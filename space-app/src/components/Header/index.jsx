@@ -5,6 +5,8 @@ const HeaderStylized = styled.header`
   padding: 60px 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
   img {
     max-width: 212px;
   }
@@ -13,10 +15,11 @@ const HeaderStylized = styled.header`
     padding: 2.8rem 1.5rem;
   }
 
-  @media (max-width: 425px) {
-    flex-direction: column;
+  @media (max-width: 430px) {
+    max-width: 100%;
+    flex-direction: row;
     align-items: center;
-    padding: 1.5rem 1.5rem;
+    padding: 2rem 1.5rem;
     img {
       max-width: 120px;
     }
@@ -25,13 +28,25 @@ const HeaderStylized = styled.header`
 `;
 
 const MenuIcon = styled.div`
+  color: #fff;
   display: none;
+  margin-right: 14rem;
   cursor: pointer;
-  margin-right: auto;
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     display: block;
   }
 `;
+
+const Image = styled.img`
+  @media (max-width: 430px) {
+    margin-right: 0.5rem;
+  }
+`;
+
+// const StyledTextInput = styled.input`
+// @media (max-width: 430px) {
+//   margin: 2rem;
+// }
 
 // eslint-disable-next-line react/prop-types
 const Header = ({ setFilter, isMobile, toggleSidebar }) => {
@@ -40,10 +55,9 @@ const Header = ({ setFilter, isMobile, toggleSidebar }) => {
       {isMobile && (
         <MenuIcon onClick={toggleSidebar}>
           <FaBars size={24} />
-          <img src="/images/logo.png" alt="logo" />
         </MenuIcon>
       )}
-      <img src="/images/logo.png" alt="logo" />
+      <Image src="/images/logo.png" alt="logo" />
       <TextInput setFilter={setFilter} />
     </HeaderStylized>
   );
