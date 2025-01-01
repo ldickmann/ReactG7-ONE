@@ -11,4 +11,6 @@ const BannerCarrinho = () => {
   );
 };
 
+// Iniciando
+
 export default BannerCarrinho;
