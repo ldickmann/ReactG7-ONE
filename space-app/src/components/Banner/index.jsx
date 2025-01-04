@@ -21,9 +21,10 @@ const StyledFigure = styled.figure`
 `;
 
 const StyledTitle = styled.h1`
+  text-align: center;
   font-size: 3rem;
   color: #fff;
-  margin: 20px 0;
+  margin: 20px 4rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   max-width: 300px;
 
