@@ -1,14 +1,17 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { CarrinhoProvider } from "./context/CarrinhoContext";
 import Home from "./pages/Home";
 import Carrinho from "./pages/Carrinho";
 import PaginaErro from "./pages/PaginaErro";
-import { CarrinhoProvider } from "./context/CarrinhoContext";
 
 import "./App.css";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter
+      // v7_startTransition and v7_relativeSplatPath são opções de configuração do React Router.
+      future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+    >
       <CarrinhoProvider>
         <Routes>
           <Route path="/" element={<Home />} />
