@@ -5,7 +5,7 @@ export const useCarrinhoContext = () => {
   const { carrinho, setCarrinho } = useContext(CarrinhoContext);
 
   function mudarQuantidade(id, quantidade) {
-    carrinho.map((itemDoCarrinho) => {
+    return carrinho.map((itemDoCarrinho) => {
       if (itemDoCarrinho.id === id) itemDoCarrinho.quantidade += quantidade;
       return itemDoCarrinho;
     });
@@ -26,7 +26,7 @@ export const useCarrinhoContext = () => {
 
     const carrinhoAtualizado = mudarQuantidade(novoProduto.id, 1);
 
-    setCarrinho({ ...carrinhoAtualizado });
+    setCarrinho([...carrinhoAtualizado]);
   }
 
   function removerProduto(id) {
