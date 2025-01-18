@@ -1,15 +1,25 @@
+import { useEffect, useState } from "react";
 import { styled } from "styled-components";
 import StylesGlobals from "./components/StylesGlobals";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Banner from "./components/Banner";
-import bannerImage from "./assets/banner.png";
 import Gallery from "./components/Gallery";
-
-import photos from "./photos.json";
-import { useEffect, useState } from "react";
 import DialogZoom from "./components/DialogZoom";
 import Footer from "./components/Footer";
+import debounce from "lodash.debounce";
+
+import bannerImage from "./assets/banner.png";
+import photos from "./photos.json";
+
+const MainContainer = styled.main.withConfig({
+  shouldForwardProp: (prop) => !["isMobile", "isTablet"].includes(prop),
+})`
+  display: flex;
+  gap: 24px;
+  flex-direction: ${(props) =>
+    props.isMobile || props.isTablet ? "column" : "row"};
+`;
 
 const FundoGradiente = styled.div`
   background: linear-gradient(
@@ -28,11 +38,6 @@ const AppContainer = styled.div`
   max-width: 100%;
 `;
 
-const MainContainer = styled.main`
-  display: flex;
-  gap: 24px;
-`;
-
 const GalleryContent = styled.div`
   display: flex;
   flex-direction: column;
@@ -44,6 +49,26 @@ const App = () => {
   const [filter, setFilter] = useState("");
   const [tag, setTag] = useState(0);
   const [photoWithZoom, setPhotoWithZoom] = useState(null);
+  const [isTablet, setIsTablet] = useState(window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 425);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
+
+  useEffect(() => {
+    const handleResize = debounce(() => {
+      setIsTablet(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= 430);
+    }, 100);
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     const filteredPhotos = photos.filter((photo) => {
@@ -63,15 +88,11 @@ const App = () => {
       });
     }
     setGalleryPhotos(
-      fotosDaGaleria.map((photoGallery) => {
-        return {
-          ...photoGallery,
-          favorite:
-            photoGallery.id === photo.id
-              ? !photo.favorite
-              : photoGallery.favorite,
-        };
-      })
+      fotosDaGaleria.map((photoGallery) =>
+        photoGallery.id === photo.id
+          ? { ...photoGallery, favorite: !photo.favorite }
+          : photoGallery
+      )
     );
   };
 
@@ -79,12 +100,17 @@ const App = () => {
     <FundoGradiente>
       <StylesGlobals />
       <AppContainer>
-        <Header filter={filter} setFilter={setFilter} />
-        <MainContainer>
-          <Sidebar />
+        <Header
+          filter={filter}
+          setFilter={setFilter}
+          isMobile={isMobile}
+          toggleSidebar={toggleSidebar}
+        />
+        <MainContainer isMobile={isMobile} isTablet={isTablet}>
+          <Sidebar isMobile={isMobile} isOpen={isOpen} />
           <GalleryContent>
             <Banner
-              backgroundImage={bannerImage}
+              backgroundImage={bannerImage || "/assets/default-banner.png"}
               title="A galeria mais completa de fotos do espaço!"
             />
             <Gallery

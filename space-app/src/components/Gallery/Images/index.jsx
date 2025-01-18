@@ -12,6 +12,7 @@ const Figure = styled.figure`
     max-width: 100%;
     border-radius: 20px 20px 0 0;
   }
+
   figcaption {
     background-color: #001634;
     border-radius: 0px 0px 20px 20px;
@@ -28,6 +29,30 @@ const Figure = styled.figure`
     h4 {
       margin: 0;
       font-size: 16px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    ${(props) => (props.$spread ? "width: 100%" : "width: 245px;")}
+
+    figcaption {
+      padding: 0.5rem;
+      h4 {
+        font-size: 14px;
+      }
+    }
+  }
+
+  @media (max-width: 430px) {
+    ${(props) => (props.$spread ? "width: 100%" : "width: 95%;")}
+    figcaption {
+      padding: 0.5rem;
+      h3 {
+        font-size: 14px;
+      }
+      h4 {
+        font-size: 12px;
+      }
     }
   }
 `;

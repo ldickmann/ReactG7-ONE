@@ -6,22 +6,29 @@ const StyledSidebar = styled.ul`
   padding: 0;
   margin: 0;
   width: 212px;
+
+  @media (max-width: 430px) {
+    display: ${(props) => (props.open ? "block" : "none")};
+  }
 `;
 
 const StyledAside = styled.aside`
   @media (max-width: 768px) {
-    width: 100%;
     display: flex;
     height: 100%;
     padding: 0 1.5rem;
+
+    @media (max-width: 425px) {
+      display: ${(props) => (props.open ? "block" : "none")};
+    }
   }
 `;
 
-const Sidebar = () => {
+const Sidebar = ({ isMobile, isOpen }) => {
   return (
-    <StyledAside>
+    <StyledAside open={isOpen}>
       <nav>
-        <StyledSidebar>
+        <StyledSidebar open={isOpen}>
           <ItemNavigation
             activeIcon="/icons/home-ativo.png"
             inactiveIcon="/icons/home-inativo.png"

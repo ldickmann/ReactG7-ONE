@@ -12,6 +12,17 @@ const ColumnPhotos = styled.div`
 const Imagem = styled.img`
   max-width: 212px;
   border-radius: 20px;
+
+  @media (max-width: 768px) {
+    width: 156px;
+    height: 118px;
+  }
+
+  @media (max-width: 430px) {
+    max-width: 100%;
+    width: 380px;
+    height: 158px;
+  }
 `;
 
 const Button = styled.button`
@@ -27,18 +38,26 @@ const Button = styled.button`
   margin-top: 16px;
 `;
 
-const Popular = () => {
-  return (
-    <section>
-      <Title $alignment="center">Populares</Title>
-      <ColumnPhotos>
-        {photos.map((photo) => (
-          <Imagem key={photo.id} src={photo.path} alt={photo.alt} />
-        ))}
-      </ColumnPhotos>
-      <Button>Ver Mais</Button>
-    </section>
-  );
-};
+const SectionTablet = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-export default Popular;
+  @media (max-width: 430px) {
+    margin-right: 1rem;
+  }
+`;
+
+const PopularGallery = () => (
+  <SectionTablet>
+    <Title>Popular Photos</Title>
+    <ColumnPhotos>
+      {photos.map((photo, index) => (
+        <Imagem key={index} src={photo.path} alt={photo.alt} />
+      ))}
+    </ColumnPhotos>
+    <Button>Ver Mais</Button>
+  </SectionTablet>
+);
+
+export default PopularGallery;

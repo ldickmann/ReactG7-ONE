@@ -4,6 +4,11 @@ import search from "./search.png";
 const StylizedContainer = styled.div`
   position: relative;
   display: inline-block;
+
+  @media (max-width: 430px) {
+    max-width: 100%;
+    margin-top: 2.5rem;
+  }
 `;
 
 const StylizedInput = styled.input`
@@ -23,6 +28,10 @@ const StylizedInput = styled.input`
   @media (max-width: 768px) {
     width: 26.625rem;
     height: 3.5rem;
+  }
+
+  @media (max-width: 430px) {
+    max-width: 100%;
   }
 `;
 
