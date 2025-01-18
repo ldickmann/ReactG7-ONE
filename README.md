@@ -6,18 +6,21 @@
 
 #### Curso em andamento:
 
-- **React: estilize componentes com Styled Components e manipule arquivos estáticos**
+- **React: praticando React com Js**
 
 #### Cursos concluídos:
 
 - **React: desenvolvendo com JavaScript**
 - **React: como os componentes funcionam**
 - **React: desenvolvendo em React Router com JavaScript**
+- **React: estilize componentes com Styled Components e manipule arquivos estáticos**
+- **React: gerencie estados globalmente com Context API**
 
 ## Diretórios
 
-- `hello-world-react/`: Projeto iniciado para adaptação do meu portfólio para uma aplicação React
+- `hello-world-react/`: Projeto iniciado para adaptação do meu portfólio para uma aplicação React.
 - `ola-mundo/`: Projeto de blog em React.
+- `react-context-api`: Projeto desenvolvido para gerenciar estados globalmente com context API.
 - `ReactComponents/`: Biblioteca de componentes reutilizáveis em React.
 - `ReactJS-organo/`: Projeto de organização de times em React.
 - `space-app/`: Aplicação de galeria de fotos do espaço.
@@ -31,6 +34,7 @@ Este repositório contém projetos desenvolvidos durante a Fase 4 do Programa Or
 - Page do projeto desenvolvido no **ReactJS-organo**: https://react-digimons-organo-one.vercel.app/
 - Page do projeto desenvolvido no **ola-mundo**: https://react-ola-mundo-one.vercel.app/
 - Page do projeto desenvolvido no **space-app**: https://react-space-app-one.vercel.app/
+- Page do projeto desenvolvido no **react-context-api**: FALTA DEPLOY
 
 ## Social Media
 
