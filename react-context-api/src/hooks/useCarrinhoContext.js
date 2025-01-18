@@ -1,5 +1,6 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { CarrinhoContext } from "@/context/CarrinhoContext";
+import { useEffect } from "react";
 
 export const useCarrinhoContext = () => {
   const {
