@@ -40,7 +40,7 @@ export const useCarrinhoContext = () => {
 
     const carrinhoAtualizado = mudarQuantidade(id, -1);
 
-    setCarrinho({ ...carrinhoAtualizado });
+    setCarrinho([...carrinhoAtualizado]);
   }
 
   function removerProdutoCarrinho(id) {

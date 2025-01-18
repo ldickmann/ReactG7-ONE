@@ -9,8 +9,8 @@ import "./App.css";
 function App() {
   return (
     <BrowserRouter
-      // v7_startTransition and v7_relativeSplatPath são opções de configuração do React Router.
-      future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      // // v7_startTransition and v7_relativeSplatPath são opções de configuração do React Router.
+      // future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
     >
       <CarrinhoProvider>
         <Routes>
