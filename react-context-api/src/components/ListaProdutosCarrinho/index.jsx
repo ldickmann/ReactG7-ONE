@@ -5,6 +5,9 @@ import { useLocation } from "react-router-dom";
 
 const ListaProdutosCarrinho = ({ carrinho }) => {
   const location = useLocation();
+  if (!carrinho) {
+    return <p className="text-center my-5">Não há produtos no carrinho</p>;
+  }
   return (
     <ul className="list-unstyled">
       {carrinho.length === 0 ? (
