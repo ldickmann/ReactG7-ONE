@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
 import Banner from "components/Banner";
 import Titulo from "components/Titulo";
+import NaoEncontrada from "pages/NaoEncontrada";
 import videos from "json/db.json";
 
 import styles from "./Player.module.css";
-import NaoEncontrada from "pages/NaoEncontrada";
 
 function Player() {
   const parametros = useParams();
