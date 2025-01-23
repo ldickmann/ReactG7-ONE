@@ -4,9 +4,12 @@
 
 ### React G7 | ONE
 
-#### Challenge em andamento:
+#### Challenge concluído
 
-- **Praticando React: Challenge AluraFlix** 
+- **Praticando React: Challenge AluraFlix**
+- https://github.com/ldickmann/AluraFlix-ONE
+
+![Lucas Elias Dickmann - Curso Praticando React - Challenge AluraFlix - Alura_rotated_page-0001](https://github.com/user-attachments/assets/f9842d60-9318-4f61-888f-162f8f5c26fb)
 
 #### Cursos concluídos:
 
@@ -16,6 +19,9 @@
 - **React: estilize componentes com Styled Components e manipule arquivos estáticos**
 - **React: gerencie estados globalmente com Context API**
 - **React: praticando React com Js**
+
+![React GT - ONE - 2025_rotated_page-0001](https://github.com/user-attachments/assets/3a91727d-d2c6-43fe-add4-e4009fe94ba6)
+
 
 ## Diretórios
 
