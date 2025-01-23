@@ -3,4 +3,14 @@
   gap: 1.5em;
   justify-content: center;
   text-align: left;
+
+  @media (max-width: 768px) {
+    padding: 0rem 5rem 0rem 5rem;
+    gap: 1em;
+  }
+
+  @media (max-width: 430px) {
+    display: flex;
+    flex-direction: column;
+  }
 }

@@ -9,6 +9,10 @@
 
 .capa {
   width: 100%;
+
+  @media (max-width: 768px) {
+   height: 250px;
+  }
 }
 
 .container h2,

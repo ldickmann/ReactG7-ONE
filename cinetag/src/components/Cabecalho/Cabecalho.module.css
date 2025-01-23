@@ -4,4 +4,8 @@
   align-items: center;
   padding: 1.1em 20em;
   background-color: var(--preto);
+
+  @media (max-width: 430px) {
+    padding: 1.1em 1em;
+  }
 }
