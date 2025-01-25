@@ -48,3 +48,17 @@ Este repositório contém projetos desenvolvidos durante a Fase 4 do Programa Or
 
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/lucas-dickmann)
 [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white)](https://instagram.com/luksdickmann)
+
+## Como Instalar e Executar o Projeto
+
+1. Clone o repositório:
+   `git clone https://github.com/ldickmann/ReactG7-ONE.git`
+
+2. Navegue até o diretório do projeto:
+   `cd ReactG7-ONE`
+
+3. Instale as dependências:
+   ```bash
+   npm install
+   # ou
+   yarn install
